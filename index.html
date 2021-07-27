@@ -321,13 +321,14 @@
         </div>
       </div>
 
-      <div class="swiper-container hero__swiper-container hero-swiper">
-        <div class="swiper-wrapper">
+      <div class="swiper-container hero__swipper hero-swiper">
+        <div class="swiper-wrapper hero__swiper-wrapper">
           <div class="swiper-slide hero__slide hero-slide-1"></div>
           <div class="swiper-slide hero__slide hero-slide-2"></div>
           <div class="swiper-slide hero__slide hero-slide-3"></div>
         </div>
       </div>
+
     </section>
 
     <!-- О нас -->
@@ -635,7 +636,7 @@
 
             <!-- Аккордионы -->
             <div class="catalog__accordions">
-              <div id="accordion-italy" class="catalog__accordion catalog-accordion" role="list">
+              <ul id="accordion-italy" class="catalog__accordion catalog-accordion">
 
                 <li class="catalog-accordion__wrapper">
                   <div class="catalog-accordion__block">
@@ -817,7 +818,7 @@
                   </div>
                 </li>
 
-              </div>
+              </ul>
             </div>
           </div>
         </div>
@@ -842,7 +843,7 @@
 
 
             <div class="catalog__accordions">
-              <div id="accordion-france" class="catalog__accordion catalog-accordion" role="list">
+              <ul id="accordion-france" class="catalog__accordion catalog-accordion">
 
                 <li class="catalog-accordion__wrapper">
                   <div class="catalog-accordion__block">
@@ -1004,7 +1005,7 @@
                     </div>
                   </div>
                 </li>
-              </div>
+              </ul>
             </div>
 
           </div>
@@ -1030,7 +1031,7 @@
 
 
             <div class="catalog__accordions">
-              <div id="accordion-germany" class="catalog__accordion catalog-accordion" role="list">
+              <ul id="accordion-germany" class="catalog__accordion catalog-accordion">
                 <li class="catalog-accordion__wrapper">
                   <div class="catalog-accordion__block">
                     <h3 class="catalog-accordion__title"> C 1400 по 1499 гг.</h3>
@@ -1192,7 +1193,7 @@
                   </div>
                 </li>
 
-              </div>
+              </ul>
             </div>
 
           </div>
@@ -1218,7 +1219,7 @@
 
 
             <div class="catalog__accordions">
-              <div id="accordion-russia" class="catalog__accordion catalog-accordion" role="list">
+              <ul id="accordion-russia" class="catalog__accordion catalog-accordion">
                 <li class="catalog-accordion__wrapper">
                   <div class="catalog-accordion__block">
                     <h3 class="catalog-accordion__title"> C 1400 по 1499 гг.</h3>
@@ -1380,7 +1381,7 @@
                   </div>
                 </li>
 
-              </div>
+              </ul>
             </div>
 
           </div>
@@ -1405,7 +1406,7 @@
 
 
             <div class="catalog__accordions">
-              <div id="accordion-belgium" class="catalog__accordion catalog-accordion" role="list">
+              <ul id="accordion-belgium" class="catalog__accordion catalog-accordion">
 
                 <li class="catalog-accordion__wrapper">
                   <div class="catalog-accordion__block">
@@ -1570,7 +1571,7 @@
 
 
 
-              </div>
+              </ul>
             </div>
 
           </div>
@@ -1581,91 +1582,92 @@
 
     <!-- События -->
 
-    <section id="events" class="events">
+    <section class="events" id="events">
       <div class="container events__container">
         <h2 class="section-heading events__heading" tabindex="0">События</h2>
-
-        <ul class="events__list">
-
-          <li class="events__item event ">
-            <article class="event__content event-1 event-card">
-              <p class="event-card__data">Музей им. Щусева <br> с 20 марта по 30 апреля</p>
-              <h3 class="event-card__title">Книжная гравюра в живом восприятии</h3>
-              <p class="event-card__text">
-                Один из ведущих флорентийских художников Кватроченто, основатель художественной династии,
-                которую продолжили его брат Давид и сын Ридольфо.
-              </p>
-              <a href="#" class="event-card__link">Подробнее</a>
-            </article>
-          </li>
-
-          <li class="events__item event">
-
-            <article class="event__content event-2 event-card">
-              <p class="event-card__data">ММОМА<br> 24 марта 19:00</p>
-              <h3 class="event-card__title">«Открытая дискуссия». Дмитрий Петров и Сергей Ильин.</h3>
-              <p class="event-card__text">
-                Высокий уровень вовлечения представителей целевой аудитории является четким доказательством
-                простого факта.
-              </p>
-              <a href="#" class="event-card__link">Подробнее</a>
-            </article>
-          </li>
-
-          <li class="events__item event ">
-
-            <article class="event__content event-3 event-card">
-              <p class="event-card__data">Еврейский музей<br> с 31 марта по 21 апреля</p>
-              <h3 class="event-card__title">Выставка «Формация 2020»</h3>
-              <p class="event-card__text">
-                Идейные соображения высшего порядка, а также современная методология разработки играет
-                важную роль в формировании глубокомысленных рассуждений.
-              </p>
-              <a href="#" class="event-card__link">Подробнее</a>
-            </article>
-          </li>
-        </ul>
+        <div class="events__swiper swiper-container">
 
 
-        <ul class="events__list-hidden">
-          <li class="events__item event">
-            <article class="event__content event-4 event-card">
-              <p class="event-card__data">Третьяковка на Крымском валу<br> с 30 марта по 30 апреля</p>
-              <h3 class="event-card__title">XXIV Международная биеннале молодого искусства</h3>
-              <p class="event-card__text">
-                Внезапно, реплицированные с зарубежных источников, современные исследования
-              </p>
-              <a href="#" class="event-card__link">Подробнее</a>
-            </article>
+          <ul class="events__list swiper-wrapper">
 
-          </li>
-          <li class="events__item event">
+            <li class="events__item event swiper-slide">
+              <article class="event__content event-1 event-card">
+                <p class="event-card__data">Музей им. Щусева <br> с 20 марта по 30 апреля</p>
+                <h3 class="event-card__title">Книжная гравюра в живом восприятии</h3>
+                <p class="event-card__text">
+                  Один из ведущих флорентийских художников Кватроченто, основатель художественной династии,
+                  которую продолжили его брат Давид и сын Ридольфо.
+                </p>
+                <a href="#" class="event-card__link">Подробнее</a>
+              </article>
+            </li>
 
-            <article class="event__content event-5 event-card">
-              <p class="event-card__data">ММАМ<br> с 8 апреля по 20 мая</p>
-              <h3 class="event-card__title">Джон Винзор. Фотографии из серии «Метафора серебра»</h3>
-              <p class="event-card__text">
-                Один из ведущих флорентийских художников Кватроченто, основатель художественной
-                династии, которую продолжили его брат Давид и сын Ридольфо.
-              </p>
-              <a href="#" class="event-card__link">Подробнее</a>
-            </article>
-          </li>
+            <li class="events__item event swiper-slide">
+              <article class="event__content event-2 event-card">
+                <p class="event-card__data">ММОМА<br> 24 марта 19:00</p>
+                <h3 class="event-card__title">«Открытая дискуссия». Дмитрий Петров и Сергей Ильин.</h3>
+                <p class="event-card__text">
+                  Высокий уровень вовлечения представителей целевой аудитории является четким доказательством
+                  простого факта.
+                </p>
+                <a href="#" class="event-card__link">Подробнее</a>
+              </article>
+            </li>
 
-          <li class="events__item event">
+            <li class="events__item event swiper-slide ">
+              <article class="event__content event-3 event-card">
+                <p class="event-card__data">Еврейский музей<br> с 31 марта по 21 апреля</p>
+                <h3 class="event-card__title">Выставка «Формация 2020»</h3>
+                <p class="event-card__text">
+                  Идейные соображения высшего порядка, а также современная методология разработки играет
+                  важную роль в формировании глубокомысленных рассуждений.
+                </p>
+                <a href="#" class="event-card__link">Подробнее</a>
+              </article>
+            </li>
 
-            <article class="event__content event-5 event-card">
-              <p class="event-card__data">ММАМ<br> с 8 апреля по 20 мая</p>
-              <h3 class="event-card__title">Джон Винзор. Фотографии из серии «Метафора серебра»</h3>
-              <p class="event-card__text">
-                Один из ведущих флорентийских художников Кватроченто, основатель художественной
-                династии, которую продолжили его брат Давид и сын Ридольфо. Глава художественной
-                мастерской, где юный Микеланджело.
-              </p>
-              <a href="#" class="event-card__link">Подробнее</a>
-            </article>
-          </li>
-        </ul>
+            <li class="events__item event swiper-slide">
+              <article class="event__content event-4 event-card">
+                <p class="event-card__data">Третьяковка на Крымском валу<br> с 30 марта по 30 апреля</p>
+                <h3 class="event-card__title">XXIV Международная биеннале молодого искусства</h3>
+                <p class="event-card__text">
+                  Внезапно, реплицированные с зарубежных источников, современные исследования
+                </p>
+                <a href="#" class="event-card__link">Подробнее</a>
+              </article>
+            </li>
+
+            <li class="events__item event swiper-slide">
+              <article class="event__content event-5 event-card">
+                <p class="event-card__data">ММАМ<br> с 8 апреля по 20 мая</p>
+                <h3 class="event-card__title">Джон Винзор. Фотографии из серии «Метафора серебра»</h3>
+                <p class="event-card__text">
+                  Один из ведущих флорентийских художников Кватроченто, основатель художественной
+                  династии, которую продолжили его брат Давид и сын Ридольфо.
+                </p>
+                <a href="#" class="event-card__link">Подробнее</a>
+              </article>
+            </li>
+
+            <li class="events__item event swiper-slide">
+              <article class="event__content event-5 event-card">
+                <p class="event-card__data">ММАМ<br> с 8 апреля по 20 мая</p>
+                <h3 class="event-card__title">Джон Винзор. Фотографии из серии «Метафора серебра»</h3>
+                <p class="event-card__text">
+                  Один из ведущих флорентийских художников Кватроченто, основатель художественной
+                  династии, которую продолжили его брат Давид и сын Ридольфо. Глава художественной
+                  мастерской, где юный Микеланджело.
+                </p>
+                <a href="#" class="event-card__link">Подробнее</a>
+              </article>
+            </li>
+          </ul>
+
+          <div class="swiper-pagination events__pagination"></div>
+
+        </div>
+
+
 
         <div class="events__button-wrapper">
           <button class="events__btn" id="more-events">Все события</button>
@@ -1674,87 +1676,89 @@
     </section>
 
 
+    <!-- Секция Издания -->
+
     <section class="publications" id="publications">
 
       <div class="container publications__container">
 
         <div class="publications__wrapper ">
           <div class="publications-left">
-            <h2 class="section-heading publications__heading" tabindex="0">Издания</h2>
+            <h2 class="section-heading publications__heading">Издания</h2>
 
             <form class="publications-left__checkbox form-checkbox" action="https://jsonplaceholder.typicode.com/posts " method="POST">
               <h2 class="form-checkbox__title" tabindex="0" aria-label="Выберете один или несколько вариантов">
                 Категории:
               </h2>
 
-              <label class="form-checkbox__body checkbox" tabindex="0">
+              <label class="form-checkbox__body checkbox" tabindex="1">
                 <input type="checkbox" class="checkbox__real" name="value-01" />
                 <span class="checkbox__fake"></span>
                 <span class="checkbox__title">Бестселлеры</span>
               </label>
 
-              <label class="form-checkbox__body checkbox" tabindex="0">
+              <label class="form-checkbox__body checkbox" >
                 <input type="checkbox" class="checkbox__real" name="value-02" />
                 <span class="checkbox__fake"></span>
                 <span class="checkbox__title">Искусство</span>
               </label>
 
-              <label class="form-checkbox__body checkbox" tabindex="0">
+              <label class="form-checkbox__body checkbox" >
                 <input type="checkbox" class="checkbox__real" name="value-03" />
                 <span class="checkbox__fake"></span>
                 <span class="checkbox__title">Архитектура</span>
               </label>
 
-              <label class="form-checkbox__body checkbox" tabindex="0">
-                <input type="checkbox" class="checkbox__real" name="value-03" checked />
+              <label class="form-checkbox__body checkbox">
+                <input type="checkbox" class="checkbox__real" name="value-04" checked />
                 <span class="checkbox__fake"></span>
                 <span class="checkbox__title">Дизайн</span>
               </label>
 
-              <label class="form-checkbox__body checkbox" tabindex="0">
-                <input type="checkbox" class="checkbox__real" name="value-04" />
+              <label class="form-checkbox__body checkbox" >
+                <input type="checkbox" class="checkbox__real" name="value-05" />
                 <span class="checkbox__fake"></span>
                 <span class="checkbox__title">Мода</span>
               </label>
 
-              <label class="form-checkbox__body checkbox" tabindex="0">
-                <input type="checkbox" class="checkbox__real" name="value-05" />
+              <label class="form-checkbox__body checkbox" >
+                <input type="checkbox" class="checkbox__real" name="value-06" />
                 <span class="checkbox__fake"></span>
                 <span class="checkbox__title">Детям</span>
               </label>
 
-              <label class="form-checkbox__body checkbox" tabindex="0">
-                <input type="checkbox" class="checkbox__real" name="value-06" />
+              <label class="form-checkbox__body checkbox" >
+                <input type="checkbox" class="checkbox__real" name="value-07" />
                 <span class="checkbox__fake"></span>
                 <span class="checkbox__title">Художественная литература</span>
               </label>
 
-              <label class="form-checkbox__body checkbox" tabindex="0">
-                <input type="checkbox" class="checkbox__real" name="value-07" />
+              <label class="form-checkbox__body checkbox" >
+                <input type="checkbox" class="checkbox__real" name="value-08" />
                 <span class="checkbox__fake"></span>
                 <span class="checkbox__title">Публицистика</span>
               </label>
 
-              <label class="form-checkbox__body checkbox" tabindex="0">
-                <input type="checkbox" class="checkbox__real" name="value-08" />
+              <label class="form-checkbox__body checkbox" >
+                <input type="checkbox" class="checkbox__real" name="value-09" />
                 <span class="checkbox__fake"></span>
                 <span class="checkbox__title">Путеводители</span>
               </label>
 
-              <label class="form-checkbox__body checkbox" tabindex="0">
-                <input type="checkbox" class="checkbox__real" name="value-09" />
+              <label class="form-checkbox__body checkbox" >
+                <input type="checkbox" class="checkbox__real" name="value-10" />
                 <span class="checkbox__fake"></span>
                 <span class="checkbox__title">Философия</span>
               </label>
 
-              <label class="form-checkbox__body checkbox" tabindex="0">
-                <input type="checkbox" class="checkbox__real" name="value-10" />
+              <label class="form-checkbox__body checkbox" >
+                <input type="checkbox" class="checkbox__real" name="value-11" />
                 <span class="checkbox__fake"></span>
                 <span class="checkbox__title">Учебная литература</span>
               </label>
 
-              <label class="form-checkbox__body checkbox" tabindex="0">
-                <input type="checkbox" class="checkbox__real" name="value-11" />
+              <label class="form-checkbox__body checkbox" >
+                <input type="checkbox" class="checkbox__real" name="value-12" />
                 <span class="checkbox__fake"></span>
                 <span class="checkbox__title">Журналы и газеты</span>
               </label>
@@ -1798,8 +1802,8 @@
 
               <div class="swiper-wrapper">
 
-                <article class="swiper-slide publications-swiper__card publications-card publications-1" tabindex="0">
-                  <div class="publications-card__content">
+                <article class="swiper-slide publications-swiper__card publications-card publications-1">
+                  <div class="publications-card__content" >
                     <h4 class="publications-card__title">Искусство цвета</h4>
                     <span class="publications-card__author">Иттен, Иоханнес</span>
                     <span class="publications-card__price">620 руб</span>
@@ -1807,7 +1811,7 @@
                   <button class="publications-card__btn">Заказать</button>
                 </article>
 
-                <article class="swiper-slide publications-swiper__card publications-card publications-2" tabindex="0">
+                <article class="swiper-slide publications-swiper__card publications-card publications-2">
                   <div class="publications-card__content">
                     <h4 class="publications-card__title">Типографика</h4>
                     <span class="publications-card__author">Рудер, Эмиль</span>
@@ -1816,7 +1820,7 @@
                   <button class="publications-card__btn">Заказать</button>
                 </article>
 
-                <article class=" swiper-slide publications-swiper__card publications-card publications-3" tabindex="0">
+                <article class=" swiper-slide publications-swiper__card publications-card publications-3">
                   <div class="publications-card__content">
                     <h4 class="publications-card__title">Книга про буквы</h4>
                     <span class="publications-card__author">Гордон, Юрий</span>
@@ -1825,7 +1829,7 @@
                   <button class="publications-card__btn">Заказать</button>
                 </article>
 
-                <article class="swiper-slide publications-swiper__card publications-card publications-4" tabindex="0">
+                <article class="swiper-slide publications-swiper__card publications-card publications-4">
                   <div class="publications-card__content">
                     <h4 class="publications-card__title">Николай Ильин</h4>
                     <span class="publications-card__author">Кричевский, Владимир</span>
@@ -1834,7 +1838,7 @@
                   <button class="publications-card__btn">Заказать</button>
                 </article>
 
-                <article class="swiper-slide publications-swiper__card publications-card publications-5" tabindex="0">
+                <article class="swiper-slide publications-swiper__card publications-card publications-5">
                   <div class="publications-card__content">
                     <h4 class="publications-card__title">Модульные сетки в граф...</h4>
                     <span class="publications-card__author">Мюллер-Брокманн, Йозеф</span>
@@ -1843,7 +1847,7 @@
                   <button class="publications-card__btn">Заказать</button>
                 </article>
 
-                <article class=" swiper-slide publications-swiper__card publications-card publications-6" tabindex="0">
+                <article class=" swiper-slide publications-swiper__card publications-card publications-6">
                   <div class="publications-card__content">
                     <h4 class="publications-card__title">Эволюция графических ст...</h4>
                     <span class="publications-card__author">Хеллер, Чваст</span>
@@ -1852,7 +1856,7 @@
                   <button class="publications-card__btn">Заказать</button>
                 </article>
 
-                <article class="swiper-slide publications-swiper__card publications-card publications-7" tabindex="0">
+                <article class="swiper-slide publications-swiper__card publications-card publications-7">
                   <div class="publications-card__content">
                     <h4 class="publications-card__title">Искусство и визуальное в...</h4>
                     <span class="publications-card__author">Арнхейм, Рудольф</span>
@@ -1958,6 +1962,7 @@
       <div class="contacts__wrapper">
 
         <div class="contacts__left contacts-left">
+
           <h3 class="contacts-left__name">Шоурум №4</h3>
           <span class="contacts-left__address">Леонтьевский переулок, дом&nbsp;5/1</span>
 
@@ -1988,6 +1993,7 @@
             </ul>
 
           </div>
+
 
         </div>
 
