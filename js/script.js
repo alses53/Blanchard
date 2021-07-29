@@ -232,11 +232,16 @@ window.addEventListener("DOMContentLoaded", function () {
 
   // События: появление скрытиых карточек и исчезновение кнопки
 
-  document.querySelector(".events__btn").addEventListener("click", function () {
-    document.querySelector(".events__btn").style.display = 'none';
-    document.querySelectorAll(".event").forEach((el) => {
-      el.style.display = "block"
-    })
+  // document.querySelector(".events__btn").addEventListener("click", function () {
+  //   document.querySelector(".events__btn").style.display = 'none';
+  //   document.querySelectorAll(".event").forEach((el) => {
+  //     el.style.display = "block"
+  //   })
+  // })
+
+  $('.events__btn').on('click', function() {
+    $('.event').slideDown('slow')
+    $(this).fadeOut()
   })
 
 
@@ -259,7 +264,7 @@ window.addEventListener("DOMContentLoaded", function () {
       clickable: true,
       slideToClickedSlide: true,
     },
-    loop: true,
+    loop: false,
     navigation: {
       nextEl: ".publications-btn__next",
       prevEl: ".publications-btn__prev",
@@ -287,10 +292,11 @@ window.addEventListener("DOMContentLoaded", function () {
         spaceBetween: 45,
       },
 
-      1600: {
+      1100: {
         slidesPerView: 2,
         spaceBetween: 50,
       },
+
       1700: {
         slidesPerGroup: 3,
         slidesPerView: 3,
@@ -321,11 +327,11 @@ window.addEventListener("DOMContentLoaded", function () {
     slidesPerView: 3,
     slidesPerGroup: 3,
     spaceBetween: 50,
-
+    // centeredSlides: true,
     clickable: true,
     slideToClickedSlide: true,
 
-    loop: true,
+    loop: false,
     navigation: {
       nextEl: ".projects-swiper__btn-next",
       prevEl: ".projects-swiper__btn-prev",
@@ -346,16 +352,17 @@ window.addEventListener("DOMContentLoaded", function () {
       // when window width is >= 480px
       920: {
         slidesPerView: 2,
-        spaceBetween: 40,
+        spaceBetween: 30,
       },
       // when window width is >= 640px
       1200: {
-        slidesPerView: 2,
+        slidesPerView: 3,
         spaceBetween: 50,
       },
-      1600: {
+
+      1620: {
         slidesPerView: 3,
-        spaceBetween: 70,
+        spaceBetween: 50,
       },
     },
   });
@@ -432,13 +439,13 @@ window.addEventListener("DOMContentLoaded", function () {
         required: true,
         minLength: 2,
         maxLength: 20,
-        function: (name, value) => {
-          if (name === "[A-Za-zА-Яа-яЁё]") {
-            return true;
-          } else {
-            return false;
-          }
-        },
+        // function: (name, value) => {
+        //   if (name === "[A-Za-zА-Яа-яЁё]") {
+        //     return true;
+        //   } else {
+        //     return false;
+        //   }
+        // },
       },
 
       tel: {
