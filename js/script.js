@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", function () {
   // Плавный переход по ссылкам
   $(document).ready(function () {
-    $(document).on("click", "a", function (e) {
+    $(document).on("click", "nav a", function (e) {
       e.preventDefault();
       var id = $(this).attr("href");
       var top = $(id).offset().top; // получаем координаты блока
@@ -13,19 +13,19 @@ window.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Открытие и закрытие бургера
 
-  document.querySelector("#burger-btn").addEventListener("click", function () {
-    document.querySelector("#burger-menu").classList.add("menu-visible");
-    document.querySelector("#burger-btn").classList.add("burger-active");
+  $(".hero__btn").on('click', function () {
+    $('html, body').animate({
+      scrollTop: $("#contacts").offset().top
+    }, 2000);
   });
 
-  document
-    .querySelector(".header__burger-close")
-    .addEventListener("click", function () {
-      document.querySelector("#burger-menu").classList.remove("menu-visible");
-      document.querySelector("#burger-btn").classList.remove("burger-active");
-    });
+  // Открытие и закрытие бургера
+  $('.burger').on('click', function() {
+    $(this).toggleClass("active"),
+    $('#burger-menu').fadeToggle()
+  })
+
 
   // Мобильный поиск
 
@@ -62,7 +62,7 @@ window.addEventListener("DOMContentLoaded", function () {
   $(".dropdown-btn").click(function () {
     if ($(this).next(".menu").is(":hidden")) {
       $(".menu").slideUp();
-      $(".header__buttom-button").removeClass("is-active");
+      $(".header__bottom-button").removeClass("is-active");
       $(this).next(".menu").slideDown();
       $(this).addClass("is-active");
     } else {
@@ -135,7 +135,7 @@ window.addEventListener("DOMContentLoaded", function () {
       1024: {
         slidesPerView: 2,
         slidesPerColumn: 2,
-        spaceBetween: 20,
+        spaceBetween: 30,
       },
 
       1400: {
@@ -185,13 +185,15 @@ window.addEventListener("DOMContentLoaded", function () {
           .querySelector(`[data-target="${path}"]`)
           .classList.add(contentActive);
 
+          // плавный скролл на мобильном
+
         let width = $(window).width();
         if (width <= 820) {
           $(tabsBtn).on("click", function () {
             $("html,body").animate({
                 scrollTop: $(`[data-target="${path}"]`).offset().top + "px",
               },
-              1000
+              2000
             );
           });
         }
@@ -232,14 +234,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   // События: появление скрытиых карточек и исчезновение кнопки
 
-  // document.querySelector(".events__btn").addEventListener("click", function () {
-  //   document.querySelector(".events__btn").style.display = 'none';
-  //   document.querySelectorAll(".event").forEach((el) => {
-  //     el.style.display = "block"
-  //   })
-  // })
-
-  $('.events__btn').on('click', function() {
+  $('.events__btn').on('click', function () {
     $('.event').slideDown('slow')
     $(this).fadeOut()
   })
@@ -289,21 +284,24 @@ window.addEventListener("DOMContentLoaded", function () {
 
       920: {
         slidesPerView: 2,
-        spaceBetween: 45,
+        spaceBetween: 50,
       },
 
-      1100: {
+      1200: {
+        slidesPerGroup: 2,
         slidesPerView: 2,
         spaceBetween: 50,
       },
 
-      1700: {
+      1400: {
         slidesPerGroup: 3,
         slidesPerView: 3,
         spaceBetween: 50,
-      },
+      }
     },
   });
+
+
 
   // Tooltips
 
@@ -344,26 +342,24 @@ window.addEventListener("DOMContentLoaded", function () {
     },
 
     breakpoints: {
-      // when window width is >= 320px
+
       320: {
         slidesPerView: 1,
         spaceBetween: 20,
       },
-      // when window width is >= 480px
-      920: {
+
+      730: {
         slidesPerView: 2,
-        spaceBetween: 30,
+        slidesPerGroup: 2,
+        spaceBetween: 50,
       },
-      // when window width is >= 640px
-      1200: {
+
+      1150: {
         slidesPerView: 3,
         spaceBetween: 50,
       },
 
-      1620: {
-        slidesPerView: 3,
-        spaceBetween: 50,
-      },
+
     },
   });
 
