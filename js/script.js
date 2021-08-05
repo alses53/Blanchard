@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", function () {
   // Плавный переход по ссылкам
   $(document).ready(function () {
-    $(document).on("click", "a", function (e) {
+    $(document).on("click", "nav a", function (e) {
       e.preventDefault();
       var id = $(this).attr("href");
       var top = $(id).offset().top; // получаем координаты блока
@@ -13,19 +13,19 @@ window.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Открытие и закрытие бургера
 
-  document.querySelector("#burger-btn").addEventListener("click", function () {
-    document.querySelector("#burger-menu").classList.add("menu-visible");
-    document.querySelector("#burger-btn").classList.add("burger-active");
+  $(".hero__btn").on('click', function () {
+    $('html, body').animate({
+      scrollTop: $("#contacts").offset().top
+    }, 2000);
   });
 
-  document
-    .querySelector(".header__burger-close")
-    .addEventListener("click", function () {
-      document.querySelector("#burger-menu").classList.remove("menu-visible");
-      document.querySelector("#burger-btn").classList.remove("burger-active");
-    });
+  // Открытие и закрытие бургера
+  $('.burger').on('click', function() {
+    $(this).toggleClass("active"),
+    $('#burger-menu').fadeToggle()
+  })
+
 
   // Мобильный поиск
 
@@ -62,7 +62,7 @@ window.addEventListener("DOMContentLoaded", function () {
   $(".dropdown-btn").click(function () {
     if ($(this).next(".menu").is(":hidden")) {
       $(".menu").slideUp();
-      $(".header__buttom-button").removeClass("is-active");
+      $(".header__bottom-button").removeClass("is-active");
       $(this).next(".menu").slideDown();
       $(this).addClass("is-active");
     } else {
@@ -74,18 +74,18 @@ window.addEventListener("DOMContentLoaded", function () {
   // swiper фона первого экрана
 
   const swiperHero = new Swiper(".hero-swiper", {
-    slidesPerView: "1",
+    slidesPerView: "auto",
+    allowTouchMove: false,
     centeredSlidesBounds: {
       centeredSlides: true,
     },
-    spaceBetween: 50,
-    // loop: true,
+    loop: true,
     autoplay: {
-      delay: 5000,
+      delay: 10000,
     },
     effect: "fade",
     fadeEffect: {
-      crossFade: true,
+      crossFade: false,
     },
   });
 
@@ -101,6 +101,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
   const swiperGallery = new Swiper(".gallery-swiper", {
     slidesPerColumn: 2,
+    slidesPerGroup: 3,
     // spaceBetween: 30,
 
     pagination: {
@@ -116,10 +117,9 @@ window.addEventListener("DOMContentLoaded", function () {
     },
 
     a11y: {
-      paginationBulletMessage: 'Переход на слайд {{index}}',
-      prevSlideMessage: 'Перейти на предыдущий слайд',
-      nextSlideMessage: 'Перейти на следующий слайд',
-
+      paginationBulletMessage: "Переход на слайд {{index}}",
+      prevSlideMessage: "Перейти на предыдущий слайд",
+      nextSlideMessage: "Перейти на следующий слайд",
     },
 
     breakpoints: {
@@ -135,7 +135,7 @@ window.addEventListener("DOMContentLoaded", function () {
       1024: {
         slidesPerView: 2,
         slidesPerColumn: 2,
-        spaceBetween: 20,
+        spaceBetween: 30,
       },
 
       1400: {
@@ -169,7 +169,6 @@ window.addEventListener("DOMContentLoaded", function () {
 
   // TABS
   function tabs(btnTab, btnTabActive, content, contentActive) {
-
     document.querySelectorAll(btnTab).forEach(function (tabsBtn) {
       tabsBtn.addEventListener("click", function (event) {
         event.preventDefault();
@@ -186,19 +185,20 @@ window.addEventListener("DOMContentLoaded", function () {
           .querySelector(`[data-target="${path}"]`)
           .classList.add(contentActive);
 
+          // плавный скролл на мобильном
+
         let width = $(window).width();
         if (width <= 820) {
           $(tabsBtn).on("click", function () {
             $("html,body").animate({
                 scrollTop: $(`[data-target="${path}"]`).offset().top + "px",
               },
-              1000
+              2000
             );
           });
         }
       });
     });
-
   }
   tabs(
     ".catalog__list-btn",
@@ -232,57 +232,76 @@ window.addEventListener("DOMContentLoaded", function () {
     "card-visible"
   );
 
-  // Все события
+  // События: появление скрытиых карточек и исчезновение кнопки
 
-  document.querySelector("#more-events").addEventListener("click", function () {
-    document.querySelector(".events__list-hidden").classList.toggle("events__list-visible");
-    document.querySelector(".events__btn").classList.toggle("is-hidden");
+  $('.events__btn').on('click', function () {
+    $('.event').slideDown('slow')
+    $(this).fadeOut()
+  })
+
+
+  // События: свайпер
+
+  var swiper = new Swiper(".events__swiper", {
+    allowTouchMove: false,
+    pagination: {
+      el: ".events__pagination",
+    },
   });
 
-  const swiperPublications = new Swiper(".publications-swiper", {
+  // Свайпер Publications
 
+  const swiperPublications = new Swiper(".publications-swiper", {
     spaceBetween: 50,
     pagination: {
-      el: '.publications-btn__pagination',
-      type: 'fraction',
+      el: ".publications-btn__pagination",
+      type: "fraction",
       clickable: true,
       slideToClickedSlide: true,
     },
-    loop: true,
+    loop: false,
     navigation: {
-      nextEl: '.publications-btn__next',
-      prevEl: '.publications-btn__prev',
+      nextEl: ".publications-btn__next",
+      prevEl: ".publications-btn__prev",
     },
 
     a11y: {
-      paginationBulletMessage: 'Переход на слайд {{index}}',
-      prevSlideMessage: 'Перейти на предыдущий слайд',
-      nextSlideMessage: 'Перейти на следующий слайд',
-
+      paginationBulletMessage: "Переход на слайд {{index}}",
+      prevSlideMessage: "Перейти на предыдущий слайд",
+      nextSlideMessage: "Перейти на следующий слайд",
     },
 
     breakpoints: {
       // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
       768: {
         slidesPerView: 2,
-        spaceBetween: 20
+        spaceBetween: 20,
       },
-      // when window width is >= 480px
+
       920: {
         slidesPerView: 2,
-        spaceBetween: 45
+        spaceBetween: 50,
       },
-      // when window width is >= 640px
-      1600: {
+
+      1200: {
+        slidesPerGroup: 2,
         slidesPerView: 2,
-        spaceBetween: 50
+        spaceBetween: 50,
       },
-      1700: {
+
+      1400: {
+        slidesPerGroup: 3,
         slidesPerView: 3,
-        spaceBetween: 50
+        spaceBetween: 50,
       }
-    }
+    },
   });
+
+
 
   // Tooltips
 
@@ -306,44 +325,43 @@ window.addEventListener("DOMContentLoaded", function () {
     slidesPerView: 3,
     slidesPerGroup: 3,
     spaceBetween: 50,
-
+    // centeredSlides: true,
     clickable: true,
     slideToClickedSlide: true,
 
-    loop: true,
+    loop: false,
     navigation: {
-      nextEl: '.projects-swiper__btn-next',
-      prevEl: '.projects-swiper__btn-prev',
+      nextEl: ".projects-swiper__btn-next",
+      prevEl: ".projects-swiper__btn-prev",
     },
 
     a11y: {
-      paginationBulletMessage: 'Переход на слайд {{index}}',
-      prevSlideMessage: 'Перейти на предыдущий слайд',
-      nextSlideMessage: 'Перейти на следующий слайд',
+      paginationBulletMessage: "Переход на слайд {{index}}",
+      prevSlideMessage: "Перейти на предыдущий слайд",
+      nextSlideMessage: "Перейти на следующий слайд",
     },
 
     breakpoints: {
-      // when window width is >= 320px
+
       320: {
         slidesPerView: 1,
-        spaceBetween: 20
+        spaceBetween: 20,
       },
-      // when window width is >= 480px
-      920: {
+
+      730: {
         slidesPerView: 2,
-        spaceBetween: 40
+        slidesPerGroup: 2,
+        spaceBetween: 50,
       },
-      // when window width is >= 640px
-      1200: {
-        slidesPerView: 2,
-        spaceBetween: 50
-      },
-      1600: {
+
+      1150: {
         slidesPerView: 3,
-        spaceBetween: 70
-      }
-    }
-  })
+        spaceBetween: 50,
+      },
+
+
+    },
+  });
 
   ymaps.ready(init);
 
@@ -355,19 +373,18 @@ window.addEventListener("DOMContentLoaded", function () {
         // Порядок по умолчанию: «широта, долгота».
         // Чтобы не определять координаты центра карты вручную,
         // воспользуйтесь инструментом Определение координат.
-        center: [55.76099, 37.6457],
+        center: [55.758747, 37.601187],
         controls: [],
         // autoFitToViewport: "always",
         // Уровень масштабирования. Допустимые значения:
         // от 0 (весь мир) до 19.
-        zoom: 14,
+        zoom: 17,
       }, {
         // При сложных перестроениях можно выставить автоматическое
         // обновление карты при изменении размеров контейнера.
         // При простых изменениях размера контейнера рекомендуется обновлять карту программно.
         // autoFitToViewport: 'always'
-        suppressMapOpenBlock: true
-
+        suppressMapOpenBlock: true,
       }
     );
     var myGeoObject = new ymaps.GeoObject({
@@ -378,7 +395,7 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 
     var myPlacemark = new ymaps.Placemark(
-      [55.75706413350817, 37.60039978856202], {}, {
+      [55.758463, 37.601079], {}, {
         iconLayout: "default#image",
         iconImageHref: "img/point.png",
         iconImageSize: [20, 20],
@@ -390,27 +407,26 @@ window.addEventListener("DOMContentLoaded", function () {
     myMap.geoObjects.add(myPlacemark);
   }
 
-// Валидация формы обратной связи
+  // Валидация формы обратной связи
   var selector = document.querySelector("input[type='tel']");
   var im = new Inputmask("+7 (999) 999 99 99");
   im.mask(selector);
 
-  new JustValidate('.contacts-form', {
+  new JustValidate(".contacts-form", {
     focusWrongField: true,
-    colorWrong: '#D11616',
+    colorWrong: "#D11616",
 
     messages: {
-
       name: {
-        minLength: 'Введите минимум 2 символа',
-        maxLength: 'Допустимо не более 20 символов',
-        required: 'Как Вас зовут?',
-        function: 'Недопустимый формат'
+        minLength: "Введите минимум 2 символа",
+        maxLength: "Допустимо не более 20 символов",
+        required: "Как Вас зовут?",
+        function: "Недопустимый формат",
       },
 
       tel: {
-        required: 'Укажите Ваш телефон',
-        function: 'Введите номер полностью! Не хватает пары цифр :)'
+        required: "Укажите Ваш телефон",
+        function: "Введите номер полностью! Не хватает пары цифр :)",
       },
     },
 
@@ -419,35 +435,22 @@ window.addEventListener("DOMContentLoaded", function () {
         required: true,
         minLength: 2,
         maxLength: 20,
-        function: (name, value) => {
-          if (name === '[A-Za-zА-Яа-яЁё]') {
-            return true;
-          } else {
-            return false;
-          };
-        },
+        // function: (name, value) => {
+        //   if (name === "[A-Za-zА-Яа-яЁё]") {
+        //     return true;
+        //   } else {
+        //     return false;
+        //   }
+        // },
       },
 
       tel: {
         required: true,
         function: (name, value) => {
-          const phone = selector.inputmask.unmaskedvalue()
-          return Number(phone) && phone.length === 10
-        }
+          const phone = selector.inputmask.unmaskedvalue();
+          return Number(phone) && phone.length === 10;
+        },
       },
-    }
+    },
   });
-
-
-
 });
-
-
-
-
-
-
-
-
-
-
