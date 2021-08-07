@@ -1,4 +1,5 @@
 window.addEventListener("DOMContentLoaded", function () {
+
   // Плавный переход по ссылкам
   $(document).ready(function () {
     $(document).on("click", "nav a", function (e) {
@@ -29,33 +30,21 @@ window.addEventListener("DOMContentLoaded", function () {
 
   // Мобильный поиск
 
-  let input = document.querySelector(".tablet-search__input");
-  let form = document.querySelector(".header__search-form");
-  let div = document.querySelector(".header__search-tablet");
-  let buttomCloseMenu = document.querySelector(".header__close-search");
-
-  document
-    .querySelector(".tablet-search__open")
-    .addEventListener("click", function (e) {
+      $('.tablet-search__open').on('click', function(e) {
       e.preventDefault();
-      if (input.value.length === 0) {
-        input.classList.toggle("is-active");
-        form.classList.toggle("is-active");
-        div.classList.toggle("is-active");
-        buttomCloseMenu.classList.toggle("is-active");
-        input.value = "";
-      }
+        $(".tablet-search__input").toggleClass("is-active");
+        $(".header__search-form").toggleClass("is-active");
+        $(".header__search-tablet").toggleClass("is-active");
+        $(".tablet-search__close").toggleClass("is-active");
     });
 
-  document
-    .querySelector(".tablet-search__close")
-    .addEventListener("click", function (e) {
+    $('.tablet-search__close').on('click', function(e) {
       e.preventDefault();
-      input.classList.remove("is-active");
-      form.classList.remove("is-active");
-      div.classList.remove("is-active");
-      buttomCloseMenu.classList.remove("is-active");
-      input.value = "";
+        $(".tablet-search__input").removeClass("is-active");
+        $(".header__search-form").removeClass("is-active");
+        $(".header__search-tablet").removeClass("is-active");
+        $(".tablet-search__close").removeClass("is-active");
+        $(".tablet-search__input").value ="";
     });
 
   // выпадающее меню в header
@@ -123,13 +112,14 @@ window.addEventListener("DOMContentLoaded", function () {
     },
 
     breakpoints: {
-      // when window width is >= 320px
+
       320: {
         slidesPerView: 2,
         spaceBetween: 20,
       },
-      768: {
+      668: {
         slidesPerView: 2,
+        slidesPerGroup: 2,
         spaceBetween: 30,
       },
       1024: {
@@ -185,10 +175,10 @@ window.addEventListener("DOMContentLoaded", function () {
           .querySelector(`[data-target="${path}"]`)
           .classList.add(contentActive);
 
-          // плавный скролл на мобильном
+          // плавный скролл на планшете
 
         let width = $(window).width();
-        if (width <= 820) {
+        if (width <= 768) {
           $(tabsBtn).on("click", function () {
             $("html,body").animate({
                 scrollTop: $(`[data-target="${path}"]`).offset().top + "px",
@@ -247,6 +237,26 @@ window.addEventListener("DOMContentLoaded", function () {
     pagination: {
       el: ".events__pagination",
     },
+    breakpoints: {
+      // 540: {
+      //   slidesPerView: 2,
+      //   spaceBetween: 20,
+      // },
+
+      // 1023: {
+      //   slidesPerView: 3,
+      //   slidesPerColumn: 2,
+      //   spaceBetween: 30,
+      // },
+
+      // 1400: {
+      //   slidesPerGroup: 3,
+      //   slidesPerView: 3,
+      //   spaceBetween: 50,
+      // }
+    }
+
+
   });
 
   // Свайпер Publications
@@ -277,9 +287,10 @@ window.addEventListener("DOMContentLoaded", function () {
         slidesPerView: 1,
         spaceBetween: 20,
       },
-      768: {
+      560: {
+
         slidesPerView: 2,
-        spaceBetween: 20,
+        spaceBetween: 40,
       },
 
       920: {
@@ -348,7 +359,14 @@ window.addEventListener("DOMContentLoaded", function () {
         spaceBetween: 20,
       },
 
-      730: {
+
+      530: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        spaceBetween: 30,
+      },
+
+      780: {
         slidesPerView: 2,
         slidesPerGroup: 2,
         spaceBetween: 50,
