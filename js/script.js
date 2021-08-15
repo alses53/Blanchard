@@ -7,8 +7,8 @@ window.addEventListener("DOMContentLoaded", function () {
       var id = $(this).attr("href");
       var top = $(id).offset().top; // получаем координаты блока
       $("body, html").animate({
-          scrollTop: top,
-        },
+        scrollTop: top,
+      },
         1500
       ); // плавно переходим к блоку
     });
@@ -22,30 +22,32 @@ window.addEventListener("DOMContentLoaded", function () {
   });
 
   // Открытие и закрытие бургера
-  $('.burger').on('click', function() {
+  $('.burger').on('click', function () {
     $(this).toggleClass("active"),
-    $('#burger-menu').fadeToggle()
+      $('#burger-menu').fadeToggle()
   })
 
 
   // Мобильный поиск
 
-      $('.tablet-search__open').on('click', function(e) {
-      e.preventDefault();
-        $(".tablet-search__input").toggleClass("is-active");
-        $(".header__search-form").toggleClass("is-active");
-        $(".header__search-tablet").toggleClass("is-active");
-        $(".tablet-search__close").toggleClass("is-active");
-    });
+  $('.tablet-search__open').on('click', function (e) {
+    e.preventDefault();
+    $(".tablet-search__input").toggleClass("is-active");
+    $(".header__search-form").toggleClass("is-active");
+    $(".header__search-tablet").toggleClass("is-active");
+    $(".tablet-search__close").toggleClass("is-active");
+    $(".header__top-container").toggleClass("is-active");
+  });
 
-    $('.tablet-search__close').on('click', function(e) {
-      e.preventDefault();
-        $(".tablet-search__input").removeClass("is-active");
-        $(".header__search-form").removeClass("is-active");
-        $(".header__search-tablet").removeClass("is-active");
-        $(".tablet-search__close").removeClass("is-active");
-        $(".tablet-search__input").value ="";
-    });
+  $('.tablet-search__close').on('click', function (e) {
+    e.preventDefault();
+    $(".tablet-search__input").removeClass("is-active");
+    $(".header__search-form").removeClass("is-active");
+    $(".header__search-tablet").removeClass("is-active");
+    $(".tablet-search__close").removeClass("is-active");
+    $(".header__top-container").toggleClass("is-active");
+    $(".tablet-search__input").value = "";
+  });
 
   // выпадающее меню в header
   $(".dropdown-btn").click(function () {
@@ -58,6 +60,7 @@ window.addEventListener("DOMContentLoaded", function () {
       $(this).next(".menu").slideUp();
       $(this).removeClass("is-active");
     }
+
   });
 
   // swiper фона первого экрана
@@ -89,9 +92,10 @@ window.addEventListener("DOMContentLoaded", function () {
   // swiper Gallery
 
   const swiperGallery = new Swiper(".gallery-swiper", {
-    slidesPerColumn: 2,
-    slidesPerGroup: 3,
-    // spaceBetween: 30,
+    slidesPerView: 1,
+    // slidesPerColumn: 1,
+    spaceBetween: 50,
+    // slidesPerGroup: 1,
 
     pagination: {
       type: "fraction",
@@ -113,13 +117,10 @@ window.addEventListener("DOMContentLoaded", function () {
 
     breakpoints: {
 
-      320: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      668: {
+      580: {
         slidesPerView: 2,
         slidesPerGroup: 2,
+        slidesPerColumn: 2,
         spaceBetween: 30,
       },
       1024: {
@@ -137,6 +138,7 @@ window.addEventListener("DOMContentLoaded", function () {
       1690: {
         slidesPerView: 3,
         spaceBetween: 50,
+        slidesPerColumn: 2,
       },
     },
   });
@@ -175,14 +177,14 @@ window.addEventListener("DOMContentLoaded", function () {
           .querySelector(`[data-target="${path}"]`)
           .classList.add(contentActive);
 
-          // плавный скролл на планшете
+        // плавный скролл на планшете
 
         let width = $(window).width();
         if (width <= 768) {
           $(tabsBtn).on("click", function () {
             $("html,body").animate({
-                scrollTop: $(`[data-target="${path}"]`).offset().top + "px",
-              },
+              scrollTop: $(`[data-target="${path}"]`).offset().top + "px",
+            },
               2000
             );
           });
@@ -230,87 +232,125 @@ window.addEventListener("DOMContentLoaded", function () {
   })
 
 
+
   // События: свайпер
 
-  var swiper = new Swiper(".events__swiper", {
-    allowTouchMove: false,
+  let swiperEvent = new Swiper(".events__swiper", {
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+    allowTouchMove: true,
+    // spaceBetween: 34,
     pagination: {
       el: ".events__pagination",
     },
     breakpoints: {
-      // 540: {
-      //   slidesPerView: 2,
-      //   spaceBetween: 20,
-      // },
-
-      // 1023: {
-      //   slidesPerView: 3,
-      //   slidesPerColumn: 2,
-      //   spaceBetween: 30,
-      // },
-
-      // 1400: {
-      //   slidesPerGroup: 3,
-      //   slidesPerView: 3,
-      //   spaceBetween: 50,
-      // }
-    }
-
-
+      768: {
+        slidesPerView: 2,
+        // spaceBetween: 34,
+        allowTouchMove: false,
+      },
+      970: {
+        slidesPerView: 2,
+        // spaceBetween: 50,
+        allowTouchMove: false,
+      },
+      1430: {
+        slidesPerView: 3,
+        // slidesPerColumn: 1,
+        // slidesPerGroup: 1,
+        // spaceBetween: 10,
+        allowTouchMove: false,
+      },
+    },
   });
+
+
+
 
   // Свайпер Publications
 
-  const swiperPublications = new Swiper(".publications-swiper", {
-    spaceBetween: 50,
-    pagination: {
-      el: ".publications-btn__pagination",
-      type: "fraction",
-      clickable: true,
-      slideToClickedSlide: true,
-    },
-    loop: false,
-    navigation: {
-      nextEl: ".publications-btn__next",
-      prevEl: ".publications-btn__prev",
-    },
+  let publicationsSwiper = function () {
+    if (window.innerWidth >= 580) {
+      let swiperPublications = new Swiper('.publications-swiper', {
+        // spaceBetween: 50,
+        pagination: {
+          el: ".publications-btn__pagination",
+          type: "fraction",
+          clickable: true,
+          slideToClickedSlide: true,
+        },
+        loop: false,
+        navigation: {
+          nextEl: ".publications-btn__next",
+          prevEl: ".publications-btn__prev",
+        },
 
-    a11y: {
-      paginationBulletMessage: "Переход на слайд {{index}}",
-      prevSlideMessage: "Перейти на предыдущий слайд",
-      nextSlideMessage: "Перейти на следующий слайд",
-    },
+        a11y: {
+          paginationBulletMessage: "Переход на слайд {{index}}",
+          prevSlideMessage: "Перейти на предыдущий слайд",
+          nextSlideMessage: "Перейти на следующий слайд",
+        },
 
-    breakpoints: {
-      // when window width is >= 320px
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20,
-      },
-      560: {
+        breakpoints: {
 
-        slidesPerView: 2,
-        spaceBetween: 40,
-      },
+          580: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
 
-      920: {
-        slidesPerView: 2,
-        spaceBetween: 50,
-      },
+          920: {
+            slidesPerView: 2,
+            spaceBetween: 50,
+          },
 
-      1200: {
-        slidesPerGroup: 2,
-        slidesPerView: 2,
-        spaceBetween: 50,
-      },
+          1200: {
+            slidesPerGroup: 2,
+            slidesPerView: 2,
+            spaceBetween: 50,
+          },
 
-      1400: {
-        slidesPerGroup: 3,
-        slidesPerView: 3,
-        spaceBetween: 50,
+          1400: {
+            slidesPerGroup: 3,
+            slidesPerView: 3,
+            spaceBetween: 50,
+          }
+        },
+      });
+
+      swiperPublications.on('resize', function () {
+        if (innerWidth < 580) {
+          swiperPublications.destroy();
+        }
+      });
+    }
+  }
+  window.addEventListener('resize', () => {
+    publicationsSwiper();
+  })
+
+  publicationsSwiper();
+
+
+  // Выпадающий список Publications
+
+
+  let checkboxVisible = () => {
+    document.querySelectorAll('.checkbox__real').forEach(el => {
+      if (el.checked === true) {
+        el.parentNode.classList.add('visible')
       }
-    },
-  });
+    })
+  }
+
+  document.querySelector('.form-checkbox__title').addEventListener('click', function () {
+    document.querySelector('.form-checkbox__title').classList.toggle('dropdown');
+    document.querySelectorAll('.checkbox').forEach(el => {
+      el.classList.toggle('visible')
+      checkboxVisible();
+    })
+
+  })
+  checkboxVisible();
 
 
 
@@ -333,9 +373,9 @@ window.addEventListener("DOMContentLoaded", function () {
   // Projects swiper
 
   const swiperProjects = new Swiper(".projects__swipper-container", {
-    slidesPerView: 3,
-    slidesPerGroup: 3,
-    spaceBetween: 50,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    slidesPerGroup: 1,
     // centeredSlides: true,
     clickable: true,
     slideToClickedSlide: true,
@@ -354,13 +394,14 @@ window.addEventListener("DOMContentLoaded", function () {
 
     breakpoints: {
 
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20,
-      },
+      // 320: {
+      //   slidesPerView: 1,
+      //   spaceBetween: 20,
+      //   slidesPerGroup: 1,
+      // },
 
 
-      530: {
+      580: {
         slidesPerView: 2,
         slidesPerGroup: 2,
         spaceBetween: 30,
@@ -387,23 +428,23 @@ window.addEventListener("DOMContentLoaded", function () {
     // Создание карты.
     const myMap = new ymaps.Map(
       "map", {
-        // Координаты центра карты.
-        // Порядок по умолчанию: «широта, долгота».
-        // Чтобы не определять координаты центра карты вручную,
-        // воспользуйтесь инструментом Определение координат.
-        center: [55.758747, 37.601187],
-        controls: [],
-        // autoFitToViewport: "always",
-        // Уровень масштабирования. Допустимые значения:
-        // от 0 (весь мир) до 19.
-        zoom: 17,
-      }, {
-        // При сложных перестроениях можно выставить автоматическое
-        // обновление карты при изменении размеров контейнера.
-        // При простых изменениях размера контейнера рекомендуется обновлять карту программно.
-        // autoFitToViewport: 'always'
-        suppressMapOpenBlock: true,
-      }
+      // Координаты центра карты.
+      // Порядок по умолчанию: «широта, долгота».
+      // Чтобы не определять координаты центра карты вручную,
+      // воспользуйтесь инструментом Определение координат.
+      center: [55.758747, 37.601187],
+      controls: [],
+      // autoFitToViewport: "always",
+      // Уровень масштабирования. Допустимые значения:
+      // от 0 (весь мир) до 19.
+      zoom: 17,
+    }, {
+      // При сложных перестроениях можно выставить автоматическое
+      // обновление карты при изменении размеров контейнера.
+      // При простых изменениях размера контейнера рекомендуется обновлять карту программно.
+      // autoFitToViewport: 'always'
+      suppressMapOpenBlock: true,
+    }
     );
     var myGeoObject = new ymaps.GeoObject({
       geometry: {
@@ -414,16 +455,25 @@ window.addEventListener("DOMContentLoaded", function () {
 
     var myPlacemark = new ymaps.Placemark(
       [55.758463, 37.601079], {}, {
-        iconLayout: "default#image",
-        iconImageHref: "img/point.png",
-        iconImageSize: [20, 20],
-        iconImageOffset: [-3, -42],
-      }
+      iconLayout: "default#image",
+      iconImageHref: "img/point.png",
+      iconImageSize: [20, 20],
+      iconImageOffset: [-3, -42],
+    }
     );
     // Размещение геообъекта на карте.
     // myMap.geoObjects.add(myGeoObject);
     myMap.geoObjects.add(myPlacemark);
   }
+
+  // Перенос карты на 580
+  $(window).on('resize', function () {
+    var win = $(this); //this = window
+    if (win.width() <= 580) {
+      $('.contacts__heading').after($('.contacts__data'));
+    }
+  });
+
 
   // Валидация формы обратной связи
   var selector = document.querySelector("input[type='tel']");
@@ -453,13 +503,13 @@ window.addEventListener("DOMContentLoaded", function () {
         required: true,
         minLength: 2,
         maxLength: 20,
-        // function: (name, value) => {
-        //   if (name === "[A-Za-zА-Яа-яЁё]") {
-        //     return true;
-        //   } else {
-        //     return false;
-        //   }
-        // },
+        function:(name, value) => {
+          if (name === "^[A-Za-zА-Яа-яЁё\s]") {
+            return true;
+          } else {
+            return false;
+          }
+        },
       },
 
       tel: {
