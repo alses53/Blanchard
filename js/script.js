@@ -7,8 +7,8 @@ window.addEventListener("DOMContentLoaded", function () {
       var id = $(this).attr("href");
       var top = $(id).offset().top; // получаем координаты блока
       $("body, html").animate({
-        scrollTop: top,
-      },
+          scrollTop: top,
+        },
         1500
       ); // плавно переходим к блоку
     });
@@ -127,18 +127,21 @@ window.addEventListener("DOMContentLoaded", function () {
         slidesPerView: 2,
         slidesPerColumn: 2,
         spaceBetween: 30,
+        slidesPerGroup: 2,
       },
 
       1400: {
         slidesPerView: 3,
         slidesPerColumn: 2,
         spaceBetween: 10,
+        slidesPerGroup: 3,
       },
 
       1690: {
         slidesPerView: 3,
         spaceBetween: 50,
         slidesPerColumn: 2,
+        slidesPerGroup: 3,
       },
     },
   });
@@ -183,8 +186,8 @@ window.addEventListener("DOMContentLoaded", function () {
         if (width <= 768) {
           $(tabsBtn).on("click", function () {
             $("html,body").animate({
-              scrollTop: $(`[data-target="${path}"]`).offset().top + "px",
-            },
+                scrollTop: $(`[data-target="${path}"]`).offset().top + "px",
+              },
               2000
             );
           });
@@ -231,41 +234,31 @@ window.addEventListener("DOMContentLoaded", function () {
     $(this).fadeOut()
   })
 
-
-
   // События: свайпер
 
   let swiperEvent = new Swiper(".events__swiper", {
     slidesPerGroup: 1,
     slidesPerView: 1,
     allowTouchMove: true,
-    // spaceBetween: 34,
+
     pagination: {
       el: ".events__pagination",
     },
     breakpoints: {
       768: {
         slidesPerView: 2,
-        // spaceBetween: 34,
         allowTouchMove: false,
       },
       970: {
         slidesPerView: 2,
-        // spaceBetween: 50,
         allowTouchMove: false,
       },
       1430: {
         slidesPerView: 3,
-        // slidesPerColumn: 1,
-        // slidesPerGroup: 1,
-        // spaceBetween: 10,
         allowTouchMove: false,
       },
     },
   });
-
-
-
 
   // Свайпер Publications
 
@@ -296,11 +289,13 @@ window.addEventListener("DOMContentLoaded", function () {
           580: {
             slidesPerView: 2,
             spaceBetween: 40,
+            slidesPerGroup: 2,
           },
 
           920: {
             slidesPerView: 2,
             spaceBetween: 50,
+            slidesPerGroup: 2,
           },
 
           1200: {
@@ -333,7 +328,6 @@ window.addEventListener("DOMContentLoaded", function () {
 
   // Выпадающий список Publications
 
-
   let checkboxVisible = () => {
     document.querySelectorAll('.checkbox__real').forEach(el => {
       if (el.checked === true) {
@@ -348,9 +342,24 @@ window.addEventListener("DOMContentLoaded", function () {
       el.classList.toggle('visible')
       checkboxVisible();
     })
-
   })
+
+  let visibilityDelete = () => {
+
+    let checkbox = document.querySelectorAll('.checkbox__real');
+    buttonToggle = document.querySelector('.form-checkbox__title');
+    for (let i = 0; i < checkbox.length; i++) {
+      let el = checkbox[i];
+      el.addEventListener('click', () => {
+        if (!el.checked && !buttonToggle.classList.contains('dropdown')) {
+          el.parentNode.classList.remove('visible');
+        }
+      })
+    }
+  }
+
   checkboxVisible();
+  visibilityDelete();
 
 
 
@@ -376,7 +385,6 @@ window.addEventListener("DOMContentLoaded", function () {
     slidesPerView: 1,
     spaceBetween: 20,
     slidesPerGroup: 1,
-    // centeredSlides: true,
     clickable: true,
     slideToClickedSlide: true,
 
@@ -416,6 +424,7 @@ window.addEventListener("DOMContentLoaded", function () {
       1150: {
         slidesPerView: 3,
         spaceBetween: 50,
+        slidesPerGroup: 3,
       },
 
 
@@ -428,23 +437,23 @@ window.addEventListener("DOMContentLoaded", function () {
     // Создание карты.
     const myMap = new ymaps.Map(
       "map", {
-      // Координаты центра карты.
-      // Порядок по умолчанию: «широта, долгота».
-      // Чтобы не определять координаты центра карты вручную,
-      // воспользуйтесь инструментом Определение координат.
-      center: [55.758747, 37.601187],
-      controls: [],
-      // autoFitToViewport: "always",
-      // Уровень масштабирования. Допустимые значения:
-      // от 0 (весь мир) до 19.
-      zoom: 17,
-    }, {
-      // При сложных перестроениях можно выставить автоматическое
-      // обновление карты при изменении размеров контейнера.
-      // При простых изменениях размера контейнера рекомендуется обновлять карту программно.
-      // autoFitToViewport: 'always'
-      suppressMapOpenBlock: true,
-    }
+        // Координаты центра карты.
+        // Порядок по умолчанию: «широта, долгота».
+        // Чтобы не определять координаты центра карты вручную,
+        // воспользуйтесь инструментом Определение координат.
+        center: [55.758747, 37.601187],
+        controls: [],
+        // autoFitToViewport: "always",
+        // Уровень масштабирования. Допустимые значения:
+        // от 0 (весь мир) до 19.
+        zoom: 17,
+      }, {
+        // При сложных перестроениях можно выставить автоматическое
+        // обновление карты при изменении размеров контейнера.
+        // При простых изменениях размера контейнера рекомендуется обновлять карту программно.
+        // autoFitToViewport: 'always'
+        suppressMapOpenBlock: true,
+      }
     );
     var myGeoObject = new ymaps.GeoObject({
       geometry: {
@@ -455,11 +464,11 @@ window.addEventListener("DOMContentLoaded", function () {
 
     var myPlacemark = new ymaps.Placemark(
       [55.758463, 37.601079], {}, {
-      iconLayout: "default#image",
-      iconImageHref: "img/point.png",
-      iconImageSize: [20, 20],
-      iconImageOffset: [-3, -42],
-    }
+        iconLayout: "default#image",
+        iconImageHref: "img/point.png",
+        iconImageSize: [20, 20],
+        iconImageOffset: [-3, -42],
+      }
     );
     // Размещение геообъекта на карте.
     // myMap.geoObjects.add(myGeoObject);
@@ -503,7 +512,7 @@ window.addEventListener("DOMContentLoaded", function () {
         required: true,
         minLength: 2,
         maxLength: 20,
-        function:(name, value) => {
+        function: (name, value) => {
           if (name === "^[A-Za-zА-Яа-яЁё\s]") {
             return true;
           } else {

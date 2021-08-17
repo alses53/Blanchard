@@ -39,8 +39,6 @@
 
           <a class="header__logo-link" href="#"><img class="header__logo" src="img/logo.svg" alt="Логотип галерееи Бланшар"></a>
 
-          <!-- меню -->
-
           <div class="header__top-menu" id="burger-menu">
 
             <nav class="header__nav">
@@ -66,12 +64,9 @@
                 <li class="nav-list__item">
                   <a aria-label="Перейти к секции: контакты" href="#contacts" class="nav-list__link">Контакты</a>
                 </li>
-
-
               </ul>
             </nav>
 
-            <!-- кнопка войти -->
             <button class="header__enter" aria-label="Войти в личный кабинет">
               <span class="header__enter-icon">
                 <svg width="13" height="13" viewbox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -82,8 +77,6 @@
             </button>
           </div>
 
-          <!-- Форма поиска mobile -->
-
           <div class="header__search-tablet">
             <form class="header__search-form tablet-search" action="http://google.com/search" target="_blank">
               <button class="tablet-search__open" aria-label="искать">
@@ -93,9 +86,9 @@
                 </svg>
               </button>
 
-              <input class="tablet-search__input" type="search" name="your-search" maxlength="30">
+              <input class="tablet-search__input" type="search" name="your-search" maxlength="30" aria-label="что будем искать">
 
-              <button class="tablet-search__close">
+              <button class="tablet-search__close" aria-label="закрыть">
                 <svg width="29" height="29" viewbox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="2.63623" width="37.2838" height="3.72838" transform="rotate(45 2.63623 0)" fill="white" />
                   <rect y="26.3636" width="37.2838" height="3.72838" transform="rotate(-45 0 26.3636)" fill="white" />
@@ -295,12 +288,8 @@
 
   <main>
 
-    <!-- HERO -->
     <section class="hero" id="hero">
       <div class="container">
-
-
-
         <div class="hero__content">
           <h1 class="hero__title" tabindex="0">Прикоснитесь к&nbsp;прекрасному</h1>
           <p class="hero__text" tabindex="0">Мы вынуждены отталкиваться от того, что реализация намеченных плановых
@@ -321,8 +310,6 @@
 
     </section>
 
-    <!-- О нас -->
-
     <section class="about" id="about">
       <div class="container about__container ">
         <div class="about__content ">
@@ -335,8 +322,6 @@
       </div>
     </section>
 
-    <!-- Галерея -->
-
     <section id="gallery" class="gallery">
       <div class="container gallery__container">
 
@@ -344,7 +329,7 @@
         <form class="gallery__form gallery-form" action="https://jsonplaceholder.typicode.com/posts " method="POST">
           <h3 class="gallery-form__title">Фильтр:</h3>
           <div class="gallery-form__select" tabindex="0">
-            <select name="select" id="selectgalery">
+            <select name="select" id="selectgalery" aria-label="выберете направление">
               <option selected>Живопись</option>
               <option value="2">Скульптура</option>
               <option value="3">Рисунок</option>
@@ -598,7 +583,7 @@
     <section class="catalog" id="catalog">
       <div class="container catalog__container">
         <div class="catalog__menu">
-          <h2 class="section-heading catalog__heading">Каталог</h2>
+          <h2 class="section-heading catalog__heading" tabindex="0">Каталог</h2>
           <ul class="catalog__list">
             <li class="catalog__list-item">
               <button class="catalog__list-btn btn-france" data-path="france" aria-label="живопись Франции"> </button>
@@ -715,13 +700,6 @@
             </div>
 
             <div class="catalog__content-card card card-real italian card-visible" id="1" data-target="italian1-painter12">
-              <!-- <picture>
-                <source srcset="img/domenico.jpg" media="(min-width: 1025px)">
-                <source srcset="img/1024/domenico-1024.jpg" media="(max-width: 1024px) and (min-width: 769px)">
-                <source srcset="img/768/domenico-768.jpg" media="(max-width: 768px) and (min-width: 326px)">
-                <img src="img/domenico.jpg" alt="Название его картины">
-              </picture> -->
-
               <img class="card__img" src="img/domenico.jpg" alt="Название его картины">
               <h3 class="card__title">Доменико Гирландайо</h3>
               <span class="card__data">2&nbsp;июня 1448&nbsp;&mdash; 11&nbsp;января 1494.</span>
@@ -1390,8 +1368,6 @@
           </div>
         </div>
 
-
-
         <div class="catalog__content" data-target="russia">
 
           <p class="catalog__content-text">Акционеры крупнейших <strong>отечественных</strong> компаний, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и&nbsp;морали. Являясь всего лишь частью общей картины,
@@ -1406,8 +1382,6 @@
               <p class="card__text">Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть!</p>
               <a class="card__link" href="#gallery">В галерею</a>
             </div>
-
-
 
             <div class="catalog__accordions">
               <ul id="accordion-russia" class="catalog__accordion catalog-accordion">
@@ -1771,8 +1745,6 @@
       </div>
     </section>
 
-    <!-- События -->
-
     <section class="events" id="events">
       <div class="container events__container">
         <h2 class="section-heading events__heading" tabindex="0">События</h2>
@@ -1876,16 +1848,13 @@
       </div>
     </section>
 
-
-    <!-- Издания -->
-
     <section class="publications" id="publications">
 
       <div class="container publications__container">
 
         <div class="publications__wrapper ">
           <div class="publications-left">
-            <h2 class="section-heading publications__heading">Издания</h2>
+            <h2 class="section-heading publications__heading" tabindex="0">Издания</h2>
 
             <form class="publications-left__checkbox form-checkbox" action="https://jsonplaceholder.typicode.com/posts " method="POST">
               <button class="form-checkbox__title" aria-label="Выберете один или несколько вариантов" type="button">
@@ -1967,11 +1936,11 @@
               <form class="widget-price__form">
                 <div class="widget-price__input">
                   <label class="widget-price__label" for="input-from">От</label>
-                  <input aria-label="Цена от" class="widget-price__input-text" type="text" id="input-from" value="50">
+                  <input class="widget-price__input-text" type="text" id="input-from" value="50" aria-label="цена от">
                 </div>
                 <div class="widget-price__input">
                   <label class="widget-price__label" for="input-before">до</label>
-                  <input aria-label="цена до" class="widget-price__input-text" type="text" id="input-before" value="25 000">
+                  <input class="widget-price__input-text" type="text" id="input-before" value="25 000" aria-label="цена до">
                   <label class="widget-price__label" for="input-before">руб.</label>
                 </div>
               </form>
@@ -2065,8 +2034,6 @@
       </div>
     </section>
 
-    <!-- Проекты -->
-
     <section class="projects" id="projects">
       <div class="container projects__container">
         <h2 class="section-heading projects__heading" tabindex="0">Проекты</h2>
@@ -2145,11 +2112,9 @@
       </div>
     </section>
 
-    <!-- Контакты -->
-
     <section id="contacts" class="contacts">
       <div class="container contacts__container">
-        <h2 class="section-heading contacts__heading">Контакты</h2>
+        <h2 class="section-heading contacts__heading" tabindex="0">Контакты</h2>
       </div>
       <div class="contacts__wrapper">
 
