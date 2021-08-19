@@ -7,8 +7,8 @@ window.addEventListener("DOMContentLoaded", function () {
       var id = $(this).attr("href");
       var top = $(id).offset().top; // получаем координаты блока
       $("body, html").animate({
-          scrollTop: top,
-        },
+        scrollTop: top,
+      },
         1500
       ); // плавно переходим к блоку
     });
@@ -93,9 +93,8 @@ window.addEventListener("DOMContentLoaded", function () {
 
   const swiperGallery = new Swiper(".gallery-swiper", {
     slidesPerView: 1,
-    // slidesPerColumn: 1,
     spaceBetween: 50,
-    // slidesPerGroup: 1,
+
 
     pagination: {
       type: "fraction",
@@ -146,6 +145,7 @@ window.addEventListener("DOMContentLoaded", function () {
     },
   });
 
+
   // Аккордионы по странам
 
   $(function () {
@@ -168,7 +168,6 @@ window.addEventListener("DOMContentLoaded", function () {
       tabsBtn.addEventListener("click", function (event) {
         event.preventDefault();
         const path = event.currentTarget.dataset.path;
-
         document.querySelectorAll(btnTab).forEach((element) => {
           element.classList.remove(btnTabActive);
         });
@@ -186,8 +185,8 @@ window.addEventListener("DOMContentLoaded", function () {
         if (width <= 768) {
           $(tabsBtn).on("click", function () {
             $("html,body").animate({
-                scrollTop: $(`[data-target="${path}"]`).offset().top + "px",
-              },
+              scrollTop: $(`[data-target="${path}"]`).offset().top + "px",
+            },
               2000
             );
           });
@@ -437,23 +436,23 @@ window.addEventListener("DOMContentLoaded", function () {
     // Создание карты.
     const myMap = new ymaps.Map(
       "map", {
-        // Координаты центра карты.
-        // Порядок по умолчанию: «широта, долгота».
-        // Чтобы не определять координаты центра карты вручную,
-        // воспользуйтесь инструментом Определение координат.
-        center: [55.758747, 37.601187],
-        controls: [],
-        // autoFitToViewport: "always",
-        // Уровень масштабирования. Допустимые значения:
-        // от 0 (весь мир) до 19.
-        zoom: 17,
-      }, {
-        // При сложных перестроениях можно выставить автоматическое
-        // обновление карты при изменении размеров контейнера.
-        // При простых изменениях размера контейнера рекомендуется обновлять карту программно.
-        // autoFitToViewport: 'always'
-        suppressMapOpenBlock: true,
-      }
+      // Координаты центра карты.
+      // Порядок по умолчанию: «широта, долгота».
+      // Чтобы не определять координаты центра карты вручную,
+      // воспользуйтесь инструментом Определение координат.
+      center: [55.758747, 37.601187],
+      controls: [],
+      // autoFitToViewport: "always",
+      // Уровень масштабирования. Допустимые значения:
+      // от 0 (весь мир) до 19.
+      zoom: 17,
+    }, {
+      // При сложных перестроениях можно выставить автоматическое
+      // обновление карты при изменении размеров контейнера.
+      // При простых изменениях размера контейнера рекомендуется обновлять карту программно.
+      // autoFitToViewport: 'always'
+      suppressMapOpenBlock: true,
+    }
     );
     var myGeoObject = new ymaps.GeoObject({
       geometry: {
@@ -464,11 +463,11 @@ window.addEventListener("DOMContentLoaded", function () {
 
     var myPlacemark = new ymaps.Placemark(
       [55.758463, 37.601079], {}, {
-        iconLayout: "default#image",
-        iconImageHref: "img/point.png",
-        iconImageSize: [20, 20],
-        iconImageOffset: [-3, -42],
-      }
+      iconLayout: "default#image",
+      iconImageHref: "img/point.png",
+      iconImageSize: [20, 20],
+      iconImageOffset: [-3, -42],
+    }
     );
     // Размещение геообъекта на карте.
     // myMap.geoObjects.add(myGeoObject);
