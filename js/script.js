@@ -86,7 +86,7 @@ window.addEventListener("DOMContentLoaded", function () {
   const element = document.querySelector("#selectgalery");
   const choices = new Choices(element, {
     searchEnabled: false,
-    placeholderValue: true,
+    placeholderValue: false,
   });
 
   // swiper Gallery
@@ -94,6 +94,7 @@ window.addEventListener("DOMContentLoaded", function () {
   const swiperGallery = new Swiper(".gallery-swiper", {
     slidesPerView: 1,
     spaceBetween: 50,
+    cssMode: true,
 
 
     pagination: {

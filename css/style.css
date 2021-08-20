@@ -20,7 +20,7 @@ body {
 }
 
 :focus {
-  outline: 1px dotted var(--color-violet);
+  outline: 0px dotted var(--color-violet);
   /* outline-offset: 5px; */
 }
 
@@ -98,8 +98,8 @@ a {
 
 .header__logo-link {
   margin-right: 11%;
-  /* flex: 0 1 27.5%; */
   padding-top: 5px;
+  outline:none;
 }
 
 /* верхнее меню */
@@ -603,6 +603,7 @@ a {
   border: none;
   height: 22px;
   background-color: transparent;
+  outline: none;
 }
 
 /* стили Hero */
@@ -1040,7 +1041,7 @@ a {
   max-width: 350px;
   height: calc((100% - 50px) / 2);
   cursor: pointer;
-  transition: border 0.3s ease-out;
+  transition: border, background-image, background-color 0.3s ease-out;
 }
 
 .gallery__slide img {
@@ -1071,12 +1072,14 @@ a {
   background-position: center center;
   background-repeat: no-repeat;
   opacity: 0;
-  transition: opacity 0.3s ease-out;
+  transition: opacity, background-image 0.3s ease-out;
 }
 
-.gallery__slide:hover::before, .gallery__slide:active::before {
+.gallery__slide:hover::before,
+.gallery__slide:active::before {
   opacity: 1;
 }
+
 
 .gallery__slide::after {
   position: absolute;
@@ -1095,6 +1098,27 @@ a {
 .gallery__slide:active::after {
   opacity: 1;
 }
+
+/* .gallery__slide:active::before {
+  content: "";
+  background: url("../img/gallery-hover.png") no-repeat center center, linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4));
+  border: 2px solid #d1a9f0;
+  width: 99%;
+  height: 99%;
+}
+
+
+.gallery__slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../img/gallery-hover.png") no-repeat center center;
+  opacity: 0;
+  transition: .3s ease-in-out;
+} */
 
 /* стили catalog */
 
