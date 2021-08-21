@@ -3537,17 +3537,7 @@ a {
     height: 16px;
   }
   /* Hero */
-  /* .hero-slide-1 {
-    background-image: url(../img/mob/hero-bgd-1-mobile.jpg);
-  }
 
-  .hero-slide-2 {
-    background-image: url(../img/mob/hero-bgd-2-mobile.jpg);
-  }
-
-  .hero-slide-3 {
-    background-image: url(../img/mob/hero-bgd-3-mobile.jpg);
-  } */
   .hero__content {
     padding: 29px 3.5%;
   }
@@ -3971,5 +3961,19 @@ a {
     align-self: center;
     width: 35%;
     height: auto;
+  }
+}
+
+@media (max-width: 400px) {
+.hero-slide-1 {
+    background-image: url(../img/mob/hero-bgd-1-mobile.jpg);
+  }
+
+  .hero-slide-2 {
+    background-image: url(../img/mob/hero-bgd-2-mobile.jpg);
+  }
+
+  .hero-slide-3 {
+    background-image: url(../img/mob/hero-bgd-3-mobile.jpg);
   }
 }
