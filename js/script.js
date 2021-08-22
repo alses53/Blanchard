@@ -60,8 +60,16 @@ window.addEventListener("DOMContentLoaded", function () {
       $(this).next(".menu").slideUp();
       $(this).removeClass("is-active");
     }
-
   });
+
+  // скрытие меню по клику вне меню и кнопки
+  $(document).click(function (e) {
+    if ($(e.target).closest(".dropdown-btn, .menu").length) return;   //при клике на эти блоки не скрывать меню (кнопка и любая открытая меню)
+    $(".menu").slideUp();
+    $(".header__bottom-button").removeClass("is-active");  //скрываем меню при клике вне любого меню и кнопки
+    e.stopPropagation();
+  });
+
 
   // swiper фона первого экрана
 
@@ -435,21 +443,12 @@ window.addEventListener("DOMContentLoaded", function () {
         // Создание карты.
         const myMap = new ymaps.Map(
           "map", {
-          // Координаты центра карты.
-          // Порядок по умолчанию: «широта, долгота».
-          // Чтобы не определять координаты центра карты вручную,
-          // воспользуйтесь инструментом Определение координат.
+
           center: [55.758747, 37.601187],
           controls: [],
-          // autoFitToViewport: "always",
-          // Уровень масштабирования. Допустимые значения:
-          // от 0 (весь мир) до 19.
           zoom: 17,
         }, {
-          // При сложных перестроениях можно выставить автоматическое
-          // обновление карты при изменении размеров контейнера.
-          // При простых изменениях размера контейнера рекомендуется обновлять карту программно.
-          // autoFitToViewport: 'always'
+
           suppressMapOpenBlock: true,
         }
         );
@@ -468,8 +467,7 @@ window.addEventListener("DOMContentLoaded", function () {
           iconImageOffset: [-3, -42],
         }
         );
-        // Размещение геообъекта на карте.
-        // myMap.geoObjects.add(myGeoObject);
+
         myMap.geoObjects.add(myPlacemark);
       }
 
@@ -477,11 +475,13 @@ window.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Перенос карты на 580
+  // Перенос адреса и карты на 580 и обратно
   $(window).on('resize', function () {
     var win = $(this); //this = window
     if (win.width() <= 580) {
       $('.contacts__heading').after($('.contacts__data'));
+    } else {
+      $('.contacts-form').before($('.contacts__data'))
     }
   });
 

@@ -99,7 +99,7 @@ a {
 .header__logo-link {
   margin-right: 11%;
   padding-top: 5px;
-  outline:none;
+  outline: none;
 }
 
 /* верхнее меню */
@@ -600,10 +600,10 @@ a {
 
 .header__search-button {
   margin-right: 9px;
+  outline: none;
   border: none;
   height: 22px;
   background-color: transparent;
-  outline: none;
 }
 
 /* стили Hero */
@@ -632,7 +632,7 @@ a {
 
 .hero__title {
   margin: 0;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   max-width: 600px;
   font-size: 72px;
   font-weight: 600;
@@ -747,8 +747,8 @@ a {
 /* Стили About*/
 
 .about {
-  padding-top: 79px;
-  padding-bottom: 69px;
+  padding-top: 80px;
+  padding-bottom: 70px;
 }
 
 .about__content {
@@ -790,7 +790,7 @@ a {
 }
 
 .gallery__heading {
-  margin-bottom: 21px;
+  margin-bottom: 25px;
   color: #ffffff;
 }
 
@@ -940,7 +940,7 @@ a {
   display: flex;
   flex-direction: column;
   margin-left: auto;
-  padding-top: 38px;
+  padding-top: 42px;
   width: 100%;
   max-width: calc(75% - 50px);
 }
@@ -1075,11 +1075,9 @@ a {
   transition: opacity, background-image 0.3s ease-out;
 }
 
-.gallery__slide:hover::before,
-.gallery__slide:active::before {
+.gallery__slide:hover::before, .gallery__slide:active::before {
   opacity: 1;
 }
-
 
 .gallery__slide::after {
   position: absolute;
@@ -1658,7 +1656,7 @@ a {
 
 .events {
   padding-top: 40px;
-  padding-bottom: 82px;
+  padding-bottom: 80px;
 }
 
 .events__heading {
@@ -1811,7 +1809,7 @@ a {
 
 .events__btn {
   position: relative;
-  padding: 15px 25px;
+  padding: 18px 25px;
   outline: none;
   border: 2px solid var(--color-violet);
   border-radius: 100px;
@@ -1868,7 +1866,7 @@ a {
 
 .publications__container {
   padding-top: 40px;
-  padding-bottom: 70px;
+  padding-bottom: 73px;
 }
 
 .publications__wrapper {
@@ -1897,11 +1895,11 @@ a {
 }
 
 .publications-left__checkbox {
-  margin-bottom: 38px;
+  margin-bottom: 40px;
 }
 
 .form-checkbox__title {
-  margin-bottom: 5px;
+  margin-bottom: 7px;
   border: none;
   font-size: 16px;
   font-weight: 700;
@@ -1915,7 +1913,7 @@ a {
 }
 
 .form-checkbox__body:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 
 .checkbox__real {
@@ -1974,7 +1972,7 @@ a {
 /* Подзунок с ценами */
 
 .widget-price__title {
-  margin-bottom: 12px;
+  margin-bottom: 15px;
   font-size: 16px;
   color: white;
 }
@@ -2119,7 +2117,7 @@ a {
 .publications-swiper__card {
   display: flex;
   flex-direction: column;
-  padding: 35.5% 0 5% 0;
+  padding: 36% 0 5% 0;
   width: 100%;
   max-width: calc((100% - 100px) / 3);
   height: auto;
@@ -2129,7 +2127,7 @@ a {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin-bottom: 11px;
+  margin-bottom: 9px;
   padding: 1px;
   max-height: 50px;
 }
@@ -2279,7 +2277,7 @@ a {
 }
 
 .projects__text {
-  margin-bottom: 19px;
+  margin-bottom: 22px;
   max-width: 1054px;
   line-height: 32px;
 }
@@ -2341,6 +2339,25 @@ a {
   fill: white;
 }
 
+.tippy-arrow {
+  width: 16px;
+  height: 16px;
+  color: var(--color-violet);
+}
+
+.tippy-box {
+  position: relative;
+  padding: 4px;
+  outline: 0;
+  border-radius: unset;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.4;
+  color: #ffffff;
+  background-color: var(--color-violet);
+  transition-property: transform, visibility, opacity;
+}
+
 /* swiper projects */
 
 .projects__swiper {
@@ -2348,7 +2365,7 @@ a {
 }
 
 .projects-swiper__title {
-  margin-bottom: 23px;
+  margin-bottom: 25px;
   font-size: 24px;
   font-weight: 600;
 }
@@ -2440,7 +2457,7 @@ a {
 /* стили contacts */
 
 .contacts {
-  padding-top: 40px;
+  padding-top: 43px;
 }
 
 .contacts__container {
@@ -2472,13 +2489,13 @@ a {
 
 .contacts-left__address {
   display: block;
-  margin-bottom: 28px;
+  margin-bottom: 30px;
   font-size: 16px;
   line-height: 32px;
 }
 
 .contacts-form__title {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   font-size: 24px;
   font-weight: 400;
 }
@@ -2495,7 +2512,7 @@ a {
 
 .contacts-form__inputs input {
   position: relative;
-  padding: 8px 24px;
+  padding: 10px 24px;
   border: 1px solid var(--color-main);
   border-radius: 100px;
   width: 100%;
@@ -2525,8 +2542,8 @@ a {
 
 .contacts-form__btn {
   position: relative;
-  margin-bottom: 36px;
-  padding: 15px 10px;
+  margin-bottom: 40px;
+  padding: 17px 10px;
   outline: none;
   border: 2px solid var(--color-violet);
   border-radius: 100px;
@@ -2572,7 +2589,7 @@ a {
 }
 
 .contacts-socials__title {
-  margin-bottom: 15px;
+  margin-bottom: 17px;
   font-size: 24px;
   font-weight: 400;
 }
@@ -2758,7 +2775,7 @@ a {
   .tablet-search__open:active path, .tablet-search__open:active rect {
     fill: var(--color-active);
   }
-  .tablet-search__input {
+  .tablet-search__input.is-active {
     margin-left: 10px;
     padding: 3px 0px;
     outline: none;
@@ -2907,7 +2924,7 @@ a {
   }
   .hero {
     height: unset;
-    min-height: 665px;
+    min-height: 669px;
   }
   .hero__content {
     padding-top: 113px;
@@ -2917,11 +2934,11 @@ a {
     margin-bottom: 10px;
   }
   .hero__text {
-    margin-bottom: 132px;
+    margin-bottom: 135px;
     max-width: unset;
   }
   .about {
-    padding-top: 82px;
+    padding-top: 80px;
   }
   /* галерея */
   .gallery {
@@ -2960,11 +2977,18 @@ a {
   .catalog__menu {
     margin-bottom: 14px;
   }
+  .catalog__content-text {
+    margin-bottom: 38px;
+  }
   .card-visible {
     max-width: calc(50% - 25px);
   }
   .catalog-accordion__item {
     margin-right: 6vw;
+  }
+  .catalog__list-btn::after {
+    top: -12px;
+    left: -11px;
   }
   .empty-block__img {
     margin-right: 5%;
@@ -2994,7 +3018,7 @@ a {
   }
   /* Издания */
   .publications-swiper__card {
-    padding-top: 53.3%;
+    padding-top: 53%;
     max-width: calc((100% - 50px) / 2);
   }
   .publications {
@@ -3022,16 +3046,19 @@ a {
     background-image: url(../img/1024/publ-7-1024.jpg);
   }
   .publications__container {
-    padding-bottom: 77px;
+    padding-bottom: 73px;
   }
   .publications-left {
     margin-right: 4%;
+  }
+  .publications-left__checkbox {
+    margin-bottom: 42px;
   }
   .publications-right {
     max-width: 68%;
   }
   .publications-right__buttons {
-    margin-bottom: 20px;
+    margin-bottom: 27px;
   }
   .publications-card__content {
     margin-bottom: 17px;
@@ -3072,7 +3099,7 @@ a {
     height: 60px;
   }
   .footer {
-    padding: 38px 0;
+    padding: 35px 0;
   }
   .footer__icon:not(:last-child) {
     margin-right: 30px;
@@ -3136,6 +3163,9 @@ a {
   }
   .hero__content {
     padding-right: 1%;
+  }
+  .about {
+    padding-top: 79px;
   }
   /* Галлерея */
   .gallery {
@@ -3230,7 +3260,7 @@ a {
   /* События */
   .events {
     padding-top: 27px;
-    padding-bottom: 82px;
+    padding-bottom: 79px;
   }
   .events__item {
     max-width: 47.5%;
@@ -3239,7 +3269,7 @@ a {
     padding-right: 3px;
   }
   .checkbox-label:before {
-    margin-right: 9px;
+    margin-right: 11px;
   }
   .event-1 {
     background-image: url(../img/768/event-1-768.jpg);
@@ -3262,7 +3292,7 @@ a {
   /* Издания */
   .publications__container {
     padding-top: 44px;
-    padding-bottom: 44px;
+    padding-bottom: 50px;
   }
   .publications {
     background-image: url(../img/768/publications-bgd-768.jpg);
@@ -3307,15 +3337,15 @@ a {
     max-width: unset;
   }
   .publications-right__buttons {
-    margin-bottom: 24px;
+    margin-bottom: 27px;
   }
   /* Проекты */
   .projects__text {
-    margin-bottom: 25px;
+    margin-bottom: 28px;
     padding-right: 5px;
   }
   .projects-swiper__title {
-    margin-bottom: 30px;
+    margin-bottom: 32px;
   }
   .projects__swipper-container {
     padding: 0 3%;
@@ -3323,6 +3353,11 @@ a {
   }
   .projects-swiper__btn-prev, .projects-swiper__btn-next {
     top: 74%;
+  }
+  .projects__slide img {
+    position: relative;
+    left: 8%;
+    width: 87%;
   }
   .projects__slide:nth-child(2) img {
     position: relative;
@@ -3537,9 +3572,8 @@ a {
     height: 16px;
   }
   /* Hero */
-
   .hero__content {
-    padding: 29px 3.5%;
+    padding: 32px 3.5%;
   }
   .hero {
     min-height: 309px;
@@ -3572,7 +3606,7 @@ a {
   }
   /* О нас */
   .about {
-    padding-top: 50px;
+    padding-top: 52px;
     padding-bottom: 40px;
   }
   .about__heading {
@@ -3588,13 +3622,13 @@ a {
   }
   .gallery {
     padding-top: 52px;
-    padding-bottom: 48px;
+    padding-bottom: 51px;
   }
   .gallery__heading {
     margin-bottom: 17px;
   }
   .gallery-form__title {
-    margin-bottom: 10px;
+    margin-bottom: 13px;
   }
   .gallery__form {
     margin-bottom: 25px;
@@ -3611,14 +3645,14 @@ a {
   .gallery__top-btn {
     align-self: center;
     order: 3;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
   }
   .gallery__pagination {
     margin-right: 15px;
     margin-left: 15px;
   }
   .gallery__slide {
-    margin-bottom: 30px;
+    margin-bottom: 32px;
     height: auto;
   }
   .gallery__slide picture {
@@ -3734,6 +3768,9 @@ a {
     padding-top: 50px;
     padding-bottom: 0px;
   }
+  .publications__heading {
+    margin-bottom: 13px;
+  }
   .publications {
     background-image: url(../img/mob/bublication-bgd-mob.jpg);
   }
@@ -3758,7 +3795,7 @@ a {
     height: auto;
   }
   .form-checkbox__body {
-    padding: 9px 0;
+    padding: 10px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   }
   .checkbox-label:before {
@@ -3925,7 +3962,7 @@ a {
     margin-bottom: 20px;
   }
   .contacts-form__btn {
-    margin-bottom: 20px;
+    margin-bottom: 17px;
     padding: 1px 10px;
     max-width: 127px;
     font-size: 12px;
@@ -3965,14 +4002,12 @@ a {
 }
 
 @media (max-width: 400px) {
-.hero-slide-1 {
+  .hero-slide-1 {
     background-image: url(../img/mob/hero-bgd-1-mobile.jpg);
   }
-
   .hero-slide-2 {
     background-image: url(../img/mob/hero-bgd-2-mobile.jpg);
   }
-
   .hero-slide-3 {
     background-image: url(../img/mob/hero-bgd-3-mobile.jpg);
   }
