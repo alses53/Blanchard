@@ -1255,6 +1255,9 @@ a {
 
 .catalog__content {
   display: none;
+  animation-name: fadeIn;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
 }
 
 .catalog__content-active {
@@ -1279,6 +1282,9 @@ a {
   flex-direction: column;
   width: 100%;
   max-width: calc(50% - 50px);
+  animation-name: fadeIn;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
 }
 
 .card__img {
@@ -3775,7 +3781,7 @@ a {
     background-image: url(../img/mob/bublication-bgd-mob.jpg);
   }
   .publications-left__checkbox {
-    margin-bottom: 12px;
+    margin-bottom: 26px;
   }
   .form-checkbox__title {
     position: relative;
@@ -3804,6 +3810,7 @@ a {
   }
   .form-checkbox__body:not(:last-child) {
     margin-right: 0;
+    margin-bottom: unset;
   }
   .form-checkbox__title::after {
     position: absolute;
@@ -3828,6 +3835,9 @@ a {
   .checkbox.visible {
     position: relative;
     display: block;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
   }
   .checkbox-label:after {
     position: absolute;
