@@ -21,7 +21,6 @@ body {
 
 :focus {
   outline: 0px dotted var(--color-violet);
-  /* outline-offset: 5px; */
 }
 
 button {
@@ -78,8 +77,6 @@ a {
   clip: rect(0 0 0 0);
 }
 
-/* Стили HEADER */
-
 .header__top {
   position: relative;
   background-color: black;
@@ -101,8 +98,6 @@ a {
   padding-top: 5px;
   outline: none;
 }
-
-/* верхнее меню */
 
 .header__top-menu {
   display: flex;
@@ -211,10 +206,6 @@ a {
   background-color: #18171b;
 }
 
-/* .header__search-form.is-active {
-  background-color: #18171b;
-} */
-
 .tablet-search__close {
   display: none;
   outline: none;
@@ -260,8 +251,6 @@ a {
 .header__close-search:focus rect {
   fill: var(--color-active);
 }
-
-/* нижнее меню */
 
 .header__bottom {
   position: absolute;
@@ -344,8 +333,6 @@ a {
   color: white;
 }
 
-/* выпадающее меню */
-
 .menu {
   position: absolute;
   top: 70px;
@@ -394,8 +381,6 @@ a {
   left: 0px;
 }
 
-/* фон для реализм */
-
 .realizm-menu__item-1 {
   background-image: url(../img/tintoretto.jpg);
 }
@@ -411,8 +396,6 @@ a {
 .realizm-menu__item-4 {
   background-image: url(../img/menu-verrokio-fone.jpg);
 }
-
-/* фон для импрессионизм */
 
 .impress-menu__item-1 {
   background-image: url(../img/monet.jpg);
@@ -430,8 +413,6 @@ a {
   background-image: url(../img/renoir.jpg);
 }
 
-/* фон для постимпрессионизм */
-
 .postimpress-menu__item-1 {
   background-image: url(../img/vangogh.jpg);
 }
@@ -448,8 +429,6 @@ a {
   background-image: url(../img/seurat.jpg);
 }
 
-/* фон для авангард */
-
 .avangard-menu__item-1 {
   background-image: url(../img/kandinsky.jpg);
 }
@@ -465,8 +444,6 @@ a {
 .avangard-menu__item-4 {
   background-image: url(../img/picasso.jpg);
 }
-
-/* фон для футуризм */
 
 .futurizm-menu__item-1 {
   background-image: url(../img/carra.jpg);
@@ -497,7 +474,6 @@ a {
   right: 0;
   bottom: 0;
   left: 0;
-  /* transition: border-color 0.3s ; */
 }
 
 .menu__link:focus::before {
@@ -545,8 +521,6 @@ a {
   width: 2px;
   background-color: white;
 }
-
-/* поиск нижнего меню */
 
 .header__bottom-search {
   display: flex;
@@ -605,8 +579,6 @@ a {
   height: 22px;
   background-color: transparent;
 }
-
-/* стили Hero */
 
 .hero {
   position: relative;
@@ -693,8 +665,6 @@ a {
   background-color: var(--color-active);
 }
 
-/* Стили swiperHERO */
-
 .hero__swipper {
   position: absolute;
   top: 0px;
@@ -744,8 +714,6 @@ a {
   }
 }
 
-/* Стили About*/
-
 .about {
   padding-top: 80px;
   padding-bottom: 70px;
@@ -764,8 +732,6 @@ a {
   line-height: 32px;
   color: var(--color-main);
 }
-
-/* стили gallery */
 
 .gallery {
   padding-top: 80px;
@@ -834,8 +800,6 @@ a {
   color: var(--color-active);
   background-color: transparent;
 }
-
-/* filter-select */
 
 .gallery__form {
   width: 100%;
@@ -933,8 +897,6 @@ a {
   color: #ffffff;
   transform: rotate(180deg);
 }
-
-/* galery swipper */
 
 .gallery__column-right {
   display: flex;
@@ -1096,29 +1058,6 @@ a {
 .gallery__slide:active::after {
   opacity: 1;
 }
-
-/* .gallery__slide:active::before {
-  content: "";
-  background: url("../img/gallery-hover.png") no-repeat center center, linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4));
-  border: 2px solid #d1a9f0;
-  width: 99%;
-  height: 99%;
-}
-
-
-.gallery__slide::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("../img/gallery-hover.png") no-repeat center center;
-  opacity: 0;
-  transition: .3s ease-in-out;
-} */
-
-/* стили catalog */
 
 .catalog {
   padding-top: 80px;
@@ -1358,8 +1297,6 @@ a {
   line-height: 32px;
 }
 
-/* Стили аккордионов */
-
 .ui-widget {
   font-family: "Open Sans", sans-serif;
 }
@@ -1500,8 +1437,6 @@ a {
   opacity: 1;
 }
 
-/* Стили заполненной карточки аккордиона */
-
 .catalog-accordion__list {
   display: flex;
   align-items: flex-start;
@@ -1584,8 +1519,6 @@ a {
   transform: rotate(180deg);
 }
 
-/* пустой блок */
-
 .empty-block {
   display: flex;
 }
@@ -1658,8 +1591,6 @@ a {
   color: var(--color-active) !important;
 }
 
-/* стили event */
-
 .events {
   padding-top: 40px;
   padding-bottom: 80px;
@@ -1698,8 +1629,6 @@ a {
 .events__pagination {
   display: none;
 }
-
-/* стили карточек */
 
 .event__content {
   position: relative;
@@ -1862,8 +1791,6 @@ a {
   opacity: 0;
 }
 
-/* стили  publications */
-
 .publications {
   background-image: url(../img/edition.jpg);
   background-position: center center;
@@ -1888,12 +1815,9 @@ a {
 .publications-left {
   display: flex;
   flex-direction: column;
-  /* margin-right: 6%; */
   width: 100%;
   max-width: 28%;
 }
-
-/* чекбоксы */
 
 .publications {
   margin-bottom: 40px;
@@ -1936,7 +1860,6 @@ a {
   display: inline-block;
   margin-right: 11px;
   border: 1px solid white;
-  /* border-radius: 3px; */
   width: 12px;
   height: 11px;
   background-color: transparent;
@@ -1974,8 +1897,6 @@ a {
 .checkbox__real:checked+.checkbox-label {
   color: var(--color-hover);
 }
-
-/* Подзунок с ценами */
 
 .widget-price__title {
   margin-bottom: 15px;
@@ -2030,8 +1951,6 @@ a {
   outline: unset;
   background-color: var(--color-active);
 }
-
-/* swiper Publications */
 
 .publications-right {
   padding-top: 50px;
@@ -2144,7 +2063,6 @@ a {
   font-weight: 700;
   text-overflow: ellipsis;
   line-height: 21.79px;
-  /* white-space: nowrap; */
   color: white;
   overflow: hidden;
   -webkit-line-clamp: 1;
@@ -2157,7 +2075,6 @@ a {
   font-weight: 400;
   text-overflow: ellipsis;
   line-height: 21.79px;
-  /* white-space: nowrap; */
   color: white;
   overflow: hidden;
   -webkit-line-clamp: 1;
@@ -2271,8 +2188,6 @@ a {
   background-size: contain;
 }
 
-/* стили projects */
-
 .projects {
   margin-bottom: 40px;
   padding-top: 40px;
@@ -2311,8 +2226,6 @@ a {
   color: var(--color-active);
   background-color: inherit;
 }
-
-/* тултипы */
 
 .tooltip-icon {
   cursor: pointer;
@@ -2363,8 +2276,6 @@ a {
   background-color: var(--color-violet);
   transition-property: transform, visibility, opacity;
 }
-
-/* swiper projects */
 
 .projects__swiper {
   position: relative;
@@ -2425,8 +2336,6 @@ a {
   border-color: var(--color-violet);
 }
 
-/* Стили кнопок projects swiper */
-
 .projects-swiper__btn-prev, .projects-swiper__btn-next {
   top: 67%;
   border-radius: 100px;
@@ -2459,8 +2368,6 @@ a {
   border: 2px solid var(--color-violet);
   background-color: #d1a9f0;
 }
-
-/* стили contacts */
 
 .contacts {
   padding-top: 43px;
@@ -2666,8 +2573,6 @@ a {
   filter: grayscale(1);
 }
 
-/* footer */
-
 .footer {
   padding: 45px 0;
   background-color: #000000;
@@ -2702,8 +2607,6 @@ a {
   outline: unset;
 }
 
-/* Адаптив */
-
 @media (max-width: 1440px) {
   .nav-list__item:not(:last-child) {
     margin-right: 2%;
@@ -2711,7 +2614,6 @@ a {
   .header__bottom-item:not(:last-child) {
     margin-right: 5%;
   }
-  /* аккордион */
   .catalog__content-text {
     max-width: 100%;
   }
@@ -2802,7 +2704,6 @@ a {
   .hero-slide-3 {
     background-image: url(../img/1024/hero-bgd-3-tablet.jpg);
   }
-  /* Появление бургера */
   .header__burger-btn {
     display: block;
     outline: none;
@@ -2946,7 +2847,6 @@ a {
   .about {
     padding-top: 80px;
   }
-  /* галерея */
   .gallery {
     background-image: url(../img/1024/gallery-bgd-1024.jpg);
   }
@@ -2973,7 +2873,6 @@ a {
   .gallery__swiper-container {
     height: 615px;
   }
-  /* Каталог */
   .catalog__heading {
     margin-right: 42px;
   }
@@ -3007,7 +2906,6 @@ a {
   .empty-block__content {
     width: 54%;
   }
-  /* События */
   .event__content {
     padding: 73% 3.5% 17% 11.5%;
     min-height: 680px;
@@ -3022,7 +2920,6 @@ a {
   .event-card__data {
     padding-right: 6px;
   }
-  /* Издания */
   .publications-swiper__card {
     padding-top: 53%;
     max-width: calc((100% - 50px) / 2);
@@ -3157,7 +3054,6 @@ a {
   .tablet-search__close:active rect {
     fill: var(--color-active);
   }
-  /* Hero */
   .hero-slide-1 {
     background-image: url(../img/768/hero-bgd-1-768.jpg);
   }
@@ -3173,7 +3069,6 @@ a {
   .about {
     padding-top: 79px;
   }
-  /* Галлерея */
   .gallery {
     background-image: url(../img/768/gallery-bgd-768.jpg);
   }
@@ -3213,7 +3108,6 @@ a {
     width: 100%;
     max-width: unset;
   }
-  /* Каталог */
   .catalog {
     padding-bottom: 28px;
   }
@@ -3263,7 +3157,6 @@ a {
   .catalog-accordion__list {
     max-height: 315px;
   }
-  /* События */
   .events {
     padding-top: 27px;
     padding-bottom: 79px;
@@ -3295,7 +3188,6 @@ a {
   .event__content {
     padding: 66.5% 4.5% 14% 11%;
   }
-  /* Издания */
   .publications__container {
     padding-top: 44px;
     padding-bottom: 50px;
@@ -3306,10 +3198,6 @@ a {
   .publications-left__checkbox {
     margin-bottom: 25px;
   }
-  /* .checkbox-label:before {
-    width: 12px;
-    height: 12px;
-  } */
   .form-checkbox__body:not(:last-child) {
     margin-right: 8.9%;
   }
@@ -3345,7 +3233,6 @@ a {
   .publications-right__buttons {
     margin-bottom: 27px;
   }
-  /* Проекты */
   .projects__text {
     margin-bottom: 28px;
     padding-right: 5px;
@@ -3370,7 +3257,6 @@ a {
     left: 10%;
     width: 80%;
   }
-  /* Контакты */
   .contacts__left {
     padding: 124px 6% 105px 50px;
     width: 56%;
@@ -3390,7 +3276,6 @@ a {
   .hero__title, .hero__text {
     text-align: center;
   }
-  /* Каталог */
   .catalog__heading {
     margin-right: unset;
     width: 100%;
@@ -3413,7 +3298,6 @@ a {
     width: 100%;
     height: 195px;
   }
-  /* События */
   .events__list {
     flex-wrap: nowrap;
   }
@@ -3448,7 +3332,6 @@ a {
     background-color: #666666;
     opacity: 1;
   }
-  /* Издания */
   .publications-card__content {
     flex-wrap: nowrap;
     max-height: unset;
@@ -3456,7 +3339,6 @@ a {
   .publications-card__price {
     align-self: flex-start;
   }
-  /* Контакты */
   .contacts__wrapper {
     flex-direction: column;
   }
@@ -3481,7 +3363,6 @@ a {
   }
   .header__top-content {
     padding: 8px 0;
-    /* margin: 0 5%; */
   }
   .burger {
     width: 23px;
@@ -3503,7 +3384,6 @@ a {
     width: 16px;
     height: auto;
   }
-  /* Бургер */
   .burger span, .burger:before, .burger:after {
     height: 2px;
   }
@@ -3577,7 +3457,6 @@ a {
     width: 16px;
     height: 16px;
   }
-  /* Hero */
   .hero__content {
     padding: 32px 3.5%;
   }
@@ -3610,7 +3489,6 @@ a {
     font-weight: 400;
     line-height: 38.13px;
   }
-  /* О нас */
   .about {
     padding-top: 52px;
     padding-bottom: 40px;
@@ -3622,7 +3500,6 @@ a {
     font-size: 14px;
     line-height: 28px;
   }
-  /* Галлерея  */
   .gallery {
     background-image: url(../img/mob/gallery-bgd-mob.jpg);
   }
@@ -3664,7 +3541,6 @@ a {
   .gallery__slide picture {
     height: 98%;
   }
-  /* Каталог */
   .catalog {
     padding-top: 50px;
     padding-bottom: 18px;
@@ -3731,7 +3607,6 @@ a {
   .empty-block__title {
     font-size: 18px;
     line-height: 32px;
-    /* letter-spacing: -0.5px; */
   }
   .empty-block__img {
     margin-right: 5%;
@@ -3745,7 +3620,6 @@ a {
     top: 4%;
     height: 92%;
   }
-  /* События */
   .events {
     padding-top: 18px;
     padding-bottom: 35px;
@@ -3769,7 +3643,6 @@ a {
   .events__item {
     margin-bottom: 43px;
   }
-  /* Издания */
   .publications {
     padding-top: 50px;
     padding-bottom: 0px;
@@ -3880,15 +3753,11 @@ a {
     font-size: 12px;
     font-weight: 700;
     line-height: 16.34px;
-    /* overflow: hidden;
-    white-space: nowrap; */
     overflow: hidden;
   }
   .publications-card__author {
     font-size: 12px;
     line-height: 16.34px;
-    /* overflow: hidden;
-    white-space: nowrap; */
   }
   .publications-card__price {
     font-size: 12px;
@@ -3905,7 +3774,6 @@ a {
     font-weight: 700;
     line-height: 16.34px;
   }
-  /* Проекты */
   .projects {
     padding-top: 9px;
     padding-bottom: 5px;
@@ -3931,7 +3799,6 @@ a {
     left: 21%;
     width: 58%;
   }
-  /* Контакты */
   .contacts {
     padding-top: 5px;
   }
@@ -3987,7 +3854,6 @@ a {
   .contacts-socials__icon:not(:last-child) {
     margin-right: 20px;
   }
-  /* Футер */
   .footer {
     padding: 17px 0;
   }

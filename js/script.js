@@ -1,19 +1,16 @@
 window.addEventListener("DOMContentLoaded", function () {
-
-  // Плавный переход по ссылкам
   $(document).ready(function () {
     $(document).on("click", "nav a", function (e) {
       e.preventDefault();
       var id = $(this).attr("href");
-      var top = $(id).offset().top; // получаем координаты блока
+      var top = $(id).offset().top;
       $("body, html").animate({
         scrollTop: top,
       },
         1500
-      ); // плавно переходим к блоку
+      );
     });
   });
-
 
   $(".hero__btn").on('click', function () {
     $('html, body').animate({
@@ -21,14 +18,10 @@ window.addEventListener("DOMContentLoaded", function () {
     }, 2000);
   });
 
-  // Открытие и закрытие бургера
   $('.burger').on('click', function () {
     $(this).toggleClass("active"),
       $('#burger-menu').fadeToggle()
   })
-
-
-  // Мобильный поиск
 
   $('.tablet-search__open').on('click', function (e) {
     e.preventDefault();
@@ -49,7 +42,6 @@ window.addEventListener("DOMContentLoaded", function () {
     $(".tablet-search__input").value = "";
   });
 
-  // выпадающее меню в header
   $(".dropdown-btn").click(function () {
     if ($(this).next(".menu").is(":hidden")) {
       $(".menu").slideUp();
@@ -62,16 +54,12 @@ window.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // скрытие меню по клику вне меню и кнопки
   $(document).click(function (e) {
-    if ($(e.target).closest(".dropdown-btn, .menu").length) return;   //при клике на эти блоки не скрывать меню (кнопка и любая открытая меню)
+    if ($(e.target).closest(".dropdown-btn, .menu").length) return; //при клике на эти блоки не скрывать меню (кнопка и любая открытая меню)
     $(".menu").slideUp();
-    $(".header__bottom-button").removeClass("is-active");  //скрываем меню при клике вне любого меню и кнопки
+    $(".header__bottom-button").removeClass("is-active");
     e.stopPropagation();
   });
-
-
-  // swiper фона первого экрана
 
   const swiperHero = new Swiper(".hero-swiper", {
     slidesPerView: "auto",
@@ -89,32 +77,25 @@ window.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  // Select in Galery
-
   const element = document.querySelector("#selectgalery");
   const choices = new Choices(element, {
     searchEnabled: false,
     placeholderValue: false,
   });
 
-  // swiper Gallery
-
   const swiperGallery = new Swiper(".gallery-swiper", {
     slidesPerView: 1,
     spaceBetween: 50,
-
     pagination: {
       type: "fraction",
       el: ".gallery__pagination",
       clickable: true,
       slideToClickedSlide: true,
     },
-
     navigation: {
       nextEl: ".gallery-button__next",
       prevEl: ".gallery-button__prev",
     },
-
     a11y: {
       paginationBulletMessage: "Переход на слайд {{index}}",
       prevSlideMessage: "Перейти на предыдущий слайд",
@@ -122,7 +103,6 @@ window.addEventListener("DOMContentLoaded", function () {
     },
 
     breakpoints: {
-
       580: {
         slidesPerView: 2,
         slidesPerGroup: 2,
@@ -135,14 +115,12 @@ window.addEventListener("DOMContentLoaded", function () {
         spaceBetween: 30,
         slidesPerGroup: 2,
       },
-
       1400: {
         slidesPerView: 3,
         slidesPerColumn: 2,
         spaceBetween: 10,
         slidesPerGroup: 3,
       },
-
       1690: {
         slidesPerView: 3,
         spaceBetween: 50,
@@ -151,9 +129,6 @@ window.addEventListener("DOMContentLoaded", function () {
       },
     },
   });
-
-
-  // Аккордионы по странам
 
   $(function () {
     $(
@@ -168,8 +143,6 @@ window.addEventListener("DOMContentLoaded", function () {
       active: 0,
     });
   });
-
-  // TABS
   function tabs(btnTab, btnTabActive, content, contentActive) {
     document.querySelectorAll(btnTab).forEach(function (tabsBtn) {
       tabsBtn.addEventListener("click", function (event) {
@@ -185,8 +158,6 @@ window.addEventListener("DOMContentLoaded", function () {
         document
           .querySelector(`[data-target="${path}"]`)
           .classList.add(contentActive);
-
-        // плавный скролл на планшете
 
         let width = $(window).width();
         if (width <= 768) {
@@ -233,14 +204,10 @@ window.addEventListener("DOMContentLoaded", function () {
     "card-visible"
   );
 
-  // События: появление скрытиых карточек и исчезновение кнопки
-
   $('.events__btn').on('click', function () {
     $('.event').slideDown('slow')
     $(this).fadeOut()
   })
-
-  // События: свайпер
 
   let swiperEvent = new Swiper(".events__swiper", {
     slidesPerGroup: 1,
@@ -266,12 +233,9 @@ window.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  // Свайпер Publications
-
-  let publicationsSwiper = function () {
+   let publicationsSwiper = function () {
     if (window.innerWidth >= 580) {
       let swiperPublications = new Swiper('.publications-swiper', {
-        // spaceBetween: 50,
         pagination: {
           el: ".publications-btn__pagination",
           type: "fraction",
@@ -291,25 +255,21 @@ window.addEventListener("DOMContentLoaded", function () {
         },
 
         breakpoints: {
-
           580: {
             slidesPerView: 2,
             spaceBetween: 40,
             slidesPerGroup: 2,
           },
-
           920: {
             slidesPerView: 2,
             spaceBetween: 50,
             slidesPerGroup: 2,
           },
-
           1200: {
             slidesPerGroup: 2,
             slidesPerView: 2,
             spaceBetween: 50,
           },
-
           1400: {
             slidesPerGroup: 3,
             slidesPerView: 3,
@@ -328,11 +288,7 @@ window.addEventListener("DOMContentLoaded", function () {
   window.addEventListener('resize', () => {
     publicationsSwiper();
   })
-
   publicationsSwiper();
-
-
-  // Выпадающий список Publications
 
   let checkboxVisible = () => {
     document.querySelectorAll('.checkbox__real').forEach(el => {
@@ -351,7 +307,6 @@ window.addEventListener("DOMContentLoaded", function () {
   })
 
   let visibilityDelete = () => {
-
     let checkbox = document.querySelectorAll('.checkbox__real');
     buttonToggle = document.querySelector('.form-checkbox__title');
     for (let i = 0; i < checkbox.length; i++) {
@@ -367,10 +322,6 @@ window.addEventListener("DOMContentLoaded", function () {
   checkboxVisible();
   visibilityDelete();
 
-
-
-  // Tooltips
-
   tippy("#tooltip-1", {
     content: "Пример современных тенденций - современная методология разработки",
     maxWidth: 264,
@@ -385,21 +336,17 @@ window.addEventListener("DOMContentLoaded", function () {
     maxWidth: 263,
   });
 
-  // Projects swiper
-
   const swiperProjects = new Swiper(".projects__swipper-container", {
     slidesPerView: 1,
     spaceBetween: 20,
     slidesPerGroup: 1,
     clickable: true,
     slideToClickedSlide: true,
-
     loop: false,
     navigation: {
       nextEl: ".projects-swiper__btn-next",
       prevEl: ".projects-swiper__btn-prev",
     },
-
     a11y: {
       paginationBulletMessage: "Переход на слайд {{index}}",
       prevSlideMessage: "Перейти на предыдущий слайд",
@@ -407,26 +354,21 @@ window.addEventListener("DOMContentLoaded", function () {
     },
 
     breakpoints: {
-
       580: {
         slidesPerView: 2,
         slidesPerGroup: 2,
         spaceBetween: 30,
       },
-
       780: {
         slidesPerView: 2,
         slidesPerGroup: 2,
         spaceBetween: 50,
       },
-
       1150: {
         slidesPerView: 3,
         spaceBetween: 50,
         slidesPerGroup: 3,
       },
-
-
     },
   });
 
@@ -438,17 +380,13 @@ window.addEventListener("DOMContentLoaded", function () {
 
     if ((scrollY >= mapOffset - 500) && (flag == 0)) {
       ymaps.ready(init);
-
       function init() {
-        // Создание карты.
         const myMap = new ymaps.Map(
           "map", {
-
           center: [55.758747, 37.601187],
           controls: [],
           zoom: 17,
         }, {
-
           suppressMapOpenBlock: true,
         }
         );
@@ -458,7 +396,6 @@ window.addEventListener("DOMContentLoaded", function () {
             coordinates: [55.8, 37.8], // координаты точки
           },
         });
-
         var myPlacemark = new ymaps.Placemark(
           [55.758463, 37.601079], {}, {
           iconLayout: "default#image",
@@ -475,7 +412,6 @@ window.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Перенос адреса и карты на 580 и обратно
   $(window).on('resize', function () {
     var win = $(this); //this = window
     if (win.width() <= 580) {
@@ -485,8 +421,6 @@ window.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-
-  // Валидация формы обратной связи
   var selector = document.querySelector("input[type='tel']");
   var im = new Inputmask("+7 (999) 999 99 99");
   im.mask(selector);
@@ -494,7 +428,6 @@ window.addEventListener("DOMContentLoaded", function () {
   new JustValidate(".contacts-form", {
     focusWrongField: true,
     colorWrong: "#D11616",
-
     messages: {
       name: {
         minLength: "Введите минимум 2 символа",
@@ -502,7 +435,6 @@ window.addEventListener("DOMContentLoaded", function () {
         required: "Как Вас зовут?",
         function: "Недопустимый формат",
       },
-
       tel: {
         required: "Укажите Ваш телефон",
         function: "Введите номер полностью! Не хватает пары цифр :)",
